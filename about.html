@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 大连天乙刀具有限公司丨刀具行业引领者</title>
+    
+    <!-- SEO优化 -->
+    <meta name="description" content="了解大连天乙刀具有限公司的发展历程、企业文化和核心价值观">
+    <meta name="keywords" content="刀具,关于天乙,公司历史,企业文化,刀具制造商">
+    
+    <!-- 公司logo -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入共享CSS文件 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 关于页面特有样式 -->
+    <style>
+        /* 关于页面特有样式 */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/about-banner.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            margin-bottom: 50px;
+        }
+        
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 10px;
+        }
+        
+        .about-detail {
+            padding: 80px 0;
+        }
+        
+        .about-mission {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mission-card {
+            background: white;
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .mission-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .timeline {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 5%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 5%;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 30px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -60px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -60px;
+        }
+        
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .team {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 25px 20px;
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .member-position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .values {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .contact-info {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-top: 20px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-container::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 50px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+                right: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ 顶部导航栏 ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- 公司Logo -->
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="天乙刀具商标" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- 桌面端导航菜单 -->
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#services">服务项目</a></li>
+                    <li><a href="products.html">产品中心</a></li>
+                    <li><a href="about.html" class="active">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ 页面标题区域 ============ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>关于天乙刀具</h1>
+            <p>专业制造，品质卓越 - 刀具行业的引领者</p>
+        </div>
+    </section>
+    
+    <!-- ============ 面包屑导航 ============ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">首页</a>
+            <span>/</span>
+            <span>关于我们</span>
+        </div>
+    </div>
+    
+    <!-- ============ 公司详细介绍 ============ -->
+    <section class="about-detail">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>刀具行业引领者</h2>
+                    <p>大连天乙刀具有限公司坐落于依山傍水、交通便利的海滨城市大连，专注于超硬刀具领域，专业生产金刚石（PCD）与立方氮化硼（PCBN）刀具。自2009年建厂以来，公司已形成稳定的生产规模，产品通过ISO9001质量体系认证，凭借可靠品质赢得客户一致认可。</p>
+                    <p>我们拥有先进的制造设备和专业的技术团队，致力于为客户提供高品质、高精度的刀具解决方案。公司产品广泛应用于汽车制造、航空航天、精密机械、电子电器等多个行业领域。</p>
+                    <p>"质量取胜，永不满足"是我们的永恒追求。我们始终坚持以客户为中心，以技术创新为动力，以优质服务为保障，与客户共同成长，共创辉煌。</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="images/company-building.jpg" alt="天乙刀具公司厂房">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 企业使命与愿景 ============ -->
+    <section class="about-mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>企业使命与愿景</h2>
+                <p>我们致力于成为全国领先的刀具解决方案提供商</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>企业使命</h3>
+                    <p>为客户提供高品质、高精度的刀具产品和解决方案，帮助客户提升生产效率，降低生产成本，创造更大价值。</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>企业愿景</h3>
+                    <p>成为全国领先的刀具制造商和技术服务商，引领刀具行业的技术创新和发展方向。</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>核心价值观</h3>
+                    <p>诚信经营、精益求精、客户至上、创新发展、合作共赢。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 发展历程 ============ -->
+    <section class="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>发展历程</h2>
+                <p>一路走来，我们不断成长与进步</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2009年</div>
+                        <h3>公司成立</h3>
+                        <p>大连天乙刀具有限公司正式成立，专注于超硬刀具的研发与生产。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2011年</div>
+                        <h3>质量认证</h3>
+                        <p>通过ISO9001质量体系认证，建立完善的质量管理体系。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2016年</div>
+                        <h3>市场拓展</h3>
+                        <p>产品成功进入国内市场，与多家知名企业建立合作关系。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018年</div>
+                        <h3>技术升级</h3>
+                        <p>引进国际先进生产设备，实现生产自动化和智能化升级。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024年</div>
+                        <h3>材料升级</h3>
+                        <p>采用新型超硬材料，提升刀具耐磨性和使用寿命。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">至今</div>
+                        <h3>持续发展</h3>
+                        <p>不断拓展产品线，加强技术研发，服务全国客户。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <!-- ============ 核心价值观 ============ -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心价值观</h2>
+                <p>我们坚守的原则与信念</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="value-title">质量第一</div>
+                    <p>我们坚持质量至上，每一件产品都经过严格检验，确保达到最高标准。</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="value-title">创新驱动</div>
+                    <p>我们持续投入研发，不断推出新技术、新产品，引领行业发展。</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="value-title">客户至上</div>
+                    <p>我们以客户需求为导向，提供个性化解决方案和优质服务。</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="value-title">诚信经营</div>
+                    <p>我们坚持诚信为本，与客户、供应商和员工建立长期信任关系。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 联系方式 ============ -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系我们</h2>
+                <p>欢迎随时与我们联系，我们将竭诚为您服务</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>公司地址</h3>
+                    <div class="contact-details">
+                        <p>大连市经济技术开发区金湾南一路25-1号</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>联系电话</h3>
+                    <div class="contact-details">
+                        <p>+86 0411-87323418</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>电子邮箱</h3>
+                    <div class="contact-details">
+                        <p>wangyuansheng73@163.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 页脚 ============ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>天乙刀具</h3>
+                    <p>我们致力于通过专业技术和优质服务，为客户提供高品质、高精度的刀具解决方案。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="index.html#services">服务项目</a></li>
+                        <li><a href="index.html#products">产品中心</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="index.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 大连市经济技术开发区金湾南一路25-1号</li>
+                        <li><i class="fas fa-phone"></i> +86 0411-87323418</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 天乙刀具有限公司. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 引入共享JavaScript文件 -->
+    <script src="script.js"></script>
+    
+    <!-- 关于页面特有脚本 -->
+    <script>
+        // 关于页面特有脚本
+        document.addEventListener('DOMContentLoaded', function() {
+            // 团队成员卡片悬停效果增强
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+                });
+                
+                member.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'var(--shadow)';
+                });
+            });
+            
+            // 发展历程动画效果
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // 使用Intersection Observer API实现滚动动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // 为时间轴项添加初始样式和观察
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${index * 0.1}s`;
+                
+                observer.observe(item);
+            });
+            
+            // 核心价值观卡片点击效果
+            const valueCards = document.querySelectorAll('.value-card');
+            
+            valueCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // 移除所有卡片的active类
+                    valueCards.forEach(c => c.classList.remove('active'));
+                    // 为当前卡片添加active类
+                    this.classList.add('active');
+                });
+            });
+            
+            // 页面加载进度指示器
+            window.addEventListener('load', function() {
+                // 模拟页面加载完成
+                setTimeout(() => {
+                    document.body.style.opacity = '1';
+                    document.body.style.transition = 'opacity 0.3s ease';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
