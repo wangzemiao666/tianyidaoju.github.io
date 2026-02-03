@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刀具修磨丨大连天乙刀具有限公司丨专业PCD/PCBN刀具修磨服务</title>
+    
+    <!-- SEO优化 -->
+    <meta name="description" content="大连天乙刀具有限公司专业PCD与PCBN刀具修磨服务，提供高精度、高效率的刀具修复与再制造解决方案">
+    <meta name="keywords" content="刀具修磨,PCD刀具修磨,PCBN刀具修磨,天乙刀具修磨,超硬刀具修复,刀具再制造">
+    
+    <!-- 公司logo -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- 刀具修磨页面特定样式 -->
+    <style>
+        /* 刀具修磨页面头部 */
+        .sharpening-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../images/sharpening-hero.jpg') center/cover;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .sharpening-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .sharpening-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: transparent;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* 修磨优势网格 */
+        .advantages-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .advantage-card {
+            background-color: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .advantage-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 修磨流程时间线 */
+        .process-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .process-step:nth-child(odd) {
+            justify-content: flex-start;
+        }
+        
+        .process-step:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .step-content {
+            width: 45%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-step:nth-child(odd) .step-number {
+            right: -75px;
+        }
+        
+        .process-step:nth-child(even) .step-number {
+            left: -75px;
+        }
+        
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        /* 修磨服务类型 */
+        .services-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-features {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        /* 设备展示 */
+        .equipment-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .equipment-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .equipment-image {
+            height: 200px;
+            background-color: #e4edf5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .equipment-content {
+            padding: 25px;
+        }
+        
+        .equipment-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* 质量保证 */
+        .quality-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .quality-item {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quality-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+        
+        .quality-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* 统计数据 */
+        .stats-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        /* 咨询卡片 */
+        .consult-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .process-step:nth-child(odd),
+            .process-step:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 60px;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -75px;
+                right: auto;
+            }
+            
+            .sharpening-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sharpening-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .sharpening-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                width: 90%;
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -55px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .sharpening-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .sharpening-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 40px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -45px;
+            }
+            
+            .services-grid,
+            .equipment-grid,
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ 顶部导航栏 ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- 公司Logo -->
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="天乙刀具商标" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- 桌面端导航菜单 -->
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li class="dropdown">
+                        <a href="#services" class="dropdown-toggle active">
+                            服务项目 <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="tool-production.html" class="dropdown-item">刀具生产</a>
+                            <a href="tool-sharpening.html" class="dropdown-item active">刀具修磨</a>
+                            <a href="after-sales.html" class="dropdown-item">售后服务</a>
+                        </div>
+                    </li>
+                    <li><a href="../products.html">产品中心</a></li>
+                    <li><a href="../about.html">关于我们</a></li>
+                    <li><a href="../index.html#contact">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ 刀具修磨页面头部 ============ -->
+    <section class="sharpening-hero">
+        <div class="container">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>刀具修磨</span>
+            </div>
+            
+            <h1>专业刀具修磨服务</h1>
+            <p>为您的PCD与PCBN刀具提供高精度修复与再制造，延长刀具寿命，降低生产成本</p>
+            <a href="#consult-section" class="btn" style="background: white; color: var(--primary-color);">立即咨询</a>
+        </div>
+    </section>
+    
+    <!-- ============ 修磨优势 ============ -->
+    <section class="advantages-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>为什么选择我们的修磨服务？</h2>
+                <p>专业的刀具修磨不仅能恢复刀具性能，还能显著降低您的生产成本</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>节约成本</h3>
+                    <p>修磨成本仅为新刀具的40%-60%，大幅降低刀具采购费用</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>快速交付</h3>
+                    <p>标准修磨周期3-7天，紧急订单24-48小时完成</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>质量保证</h3>
+                    <p>修磨后刀具性能达到新刀的90%以上，提供质量保证</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>环保可持续</h3>
+                    <p>延长刀具使用寿命，减少资源浪费，践行绿色制造</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 修磨流程时间线 ============ -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>修磨流程</h2>
+                <p>标准化的五步修磨流程，确保每一把刀具恢复最佳性能</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="timeline-line"></div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>刀具检测与评估</h3>
+                        <p>使用精密检测设备对刀具进行全面检测，评估磨损程度、几何精度和修复可行性，制定个性化修磨方案。</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>清洁与预处理</h3>
+                        <p>采用标准清洗技术彻底清除刀具表面的油污、切屑和杂质，为后续修磨工序做好准备。</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>精密修磨</h3>
+                        <p>使用高端数控刃磨机床，配备金刚石砂轮，按照原始设计参数进行精密修磨，恢复刀具几何精度。</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>刃口处理与抛光</h3>
+                        <p>对修磨后的刃口进行精密处理和抛光，确保刃口锋利度Ra≤0.2μm，提高切削性能和刀具寿命。</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">05</div>
+                        <h3>最终检测与包装</h3>
+                        <p>修磨完成后进行全尺寸检测，合格产品进行防锈处理和专业包装。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 修磨服务类型 ============ -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>修磨服务类型</h2>
+                <p>针对不同刀具类型和磨损情况，提供定制化的修磨解决方案</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3>标准刃口修磨</h3>
+                        <p>适用于轻微磨损刀具</p>
+                    </div>
+                    <div class="service-content">
+                        <p>针对刃口轻微磨损的PCD/PCBN刀具，恢复原始几何角度和锋利度。</p>
+                        <ul class="service-features">
+                            <li>恢复刀具原始几何精度</li>
+                            <li>刃口锋利度Ra≤0.2μm</li>
+                            <li>修磨周期：3-5天</li>
+                            <li>修磨后性能：新刀的95%以上</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>复杂刀具修磨</h3>
+                        <p>适用于多刃、特殊角度刀具</p>
+                    </div>
+                    <div class="service-content">
+                        <p>针对复杂几何形状、多刃、特殊角度的PCD/PCBN刀具进行精密修磨。</p>
+                        <ul class="service-features">
+                            <li>慢走丝电火花切割机精密修复</li>
+                            <li>保持复杂几何形状</li>
+                            <li>修磨周期：5-7天</li>
+                            <li>适用于成型刀具</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <h3>刀具替刃修磨</h3>
+                        <p>适用于严重磨损或损坏刀具</p>
+                    </div>
+                    <div class="service-content">
+                        <p>针对严重磨损、崩刃或损坏的刀具，进行修复和再制造，恢复使用功能。</p>
+                        <ul class="service-features">
+                            <li>修复严重磨损刀具</li>
+                            <li>更换损坏刀片</li>
+                            <li>修磨周期：7-10天</li>
+                            <li>成本节约达60%以上</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 修磨设备展示 ============ -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>先进修磨设备</h2>
+                <p>采用国际一流的修磨与检测设备，确保修磨质量和精度</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/grinding-machine.jpg" alt="数控刃磨机床">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>数控刃磨机床</h3>
+                        <p>高端数控刃磨设备，配备金刚石砂轮，实现PCD/PCBN刀具精密修磨。</p>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/measuring-machine.jpg" alt="三坐标测量仪">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>基恩士测量仪</h3>
+                        <p>高精度检测设备，用于修磨前后刀具尺寸和几何精度的全面检测。</p>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/microscope.jpg" alt="数字显微镜">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>数字显微镜系统</h3>
+                        <p>高倍率数字显微镜，用于刀具刃口质量、磨损情况的精密检测和分析。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 质量保证体系 ============ -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>质量保证</h2>
+                <p>严格的修磨质量控制和检测标准，确保每一把修磨刀具都达到最高标准</p>
+            </div>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h4>尺寸精度检测</h4>
+                    <p>修磨后刀具尺寸精度控制在±0.01mm以内</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h4>刃口质量检测</h4>
+                    <p>刃口粗糙度Ra≤0.2μm，确保切削锋利</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 统计数据 ============ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>我们的修磨能力</h2>
+                <p>专业的团队与设备，为客户提供高效的修磨服务</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5000">5000</div>
+                    <div class="stat-label">年修磨能力（件）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">99</div>
+                    <div class="stat-label">客户满意度（%）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="40">40</div>
+                    <div class="stat-label">成本节约率（%）</div>
+                </div>
+            </div>
+            
+            <div style="max-width: 900px; margin: 60px auto 0; padding: 30px; background-color: white; border-radius: 8px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px; text-align: center;">修磨服务优势</h3>
+                <div style="line-height: 1.8;">
+                    <p style="margin-bottom: 15px;"><strong>1. 专业技术团队</strong>：拥有18年以上刀具修磨经验的技术团队，熟悉各种PCD/PCBN刀具的修磨工艺。</p>
+                    <p style="margin-bottom: 15px;"><strong>2. 先进修磨设备</strong>：引进国际一流的修磨和检测设备，确保修磨精度和质量稳定性。</p>
+                    <p style="margin-bottom: 15px;"><strong>3. 严格质量控制</strong>：建立从接收到交付的全过程质量控制体系，确保每一把修磨刀具都符合标准。</p>
+                    <p style="margin-bottom: 15px;"><strong>4. 快速响应服务</strong>：标准修磨周期3-7天，紧急订单可加急处理，最大限度减少客户停机时间。</p>
+                    <p><strong>5. 成本优化方案</strong>：根据刀具磨损情况，提供最优修磨方案，帮助客户降低刀具使用成本。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 咨询区域 ============ -->
+    <section class="consult-section" id="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <h3>需要刀具修磨服务？</h3>
+                <p>我们的技术团队将为您提供专业的刀具检测、评估和修磨方案，助您降低生产成本。</p>
+                <a href="tel:+8613674260538" class="btn consult-btn">
+                    <i class="fas fa-phone"></i> 立即咨询
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 页脚 ============ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>天乙刀具</h3>
+                    <p>我们致力于通过专业技术和优质服务，为客户提供高品质、高精度的刀具解决方案。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../index.html#services">服务项目</a></li>
+                        <li><a href="../index.html#products">产品中心</a></li>
+                        <li><a href="../about.html">关于我们</a></li>
+                        <li><a href="../index.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 大连市经济技术开发区金湾南一路25-1号</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 天乙刀具有限公司. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 引入外部JavaScript文件 -->
+    <script src="../script.js"></script>
+    
+    <!-- 页面特定JavaScript -->
+    <script>
+        // 数字动画效果
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.getAttribute('data-count').includes('%')) {
+                        stat.textContent = Math.floor(current) + '%';
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+        
+        // 当元素进入视口时触发动画
+        function initNumberAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        }
+        
+        // 页面加载完成后初始化数字动画
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNumberAnimation);
+        } else {
+            initNumberAnimation();
+        }
+    </script>
+</body>
+</html>
