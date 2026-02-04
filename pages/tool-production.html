@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刀具生产丨大连天乙刀具有限公司丨专业PCD/PCBN刀具制造</title>
+    
+    <!-- SEO优化 -->
+    <meta name="description" content="大连天乙刀具有限公司专业PCD与PCBN刀具生产工艺介绍，展示我们的生产设备、工艺流程和质量控制体系">
+    <meta name="keywords" content="刀具生产,PCD刀具生产,PCBN刀具生产,天乙刀具生产工艺,超硬刀具制造">
+    
+    <!-- 公司logo -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- 刀具生产页面特定样式 -->
+    <style>
+        /* 刀具生产页面头部 */
+        .production-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../images/production-hero.jpg') center/cover;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .production-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .production-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: transparent;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* 生产流程时间线 */
+        .process-timeline {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-step {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .timeline-step:nth-child(odd) {
+            justify-content: flex-start;
+        }
+        
+        .timeline-step:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .step-content {
+            width: 45%;
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-step:nth-child(odd) .step-number {
+            right: -75px;
+        }
+        
+        .timeline-step:nth-child(even) .step-number {
+            left: -75px;
+        }
+        
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .step-image {
+            margin-top: 20px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .step-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .step-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 生产设备网格 */
+        .equipment-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .equipment-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .equipment-image {
+            height: 220px;
+            background-color: #e4edf5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .equipment-content {
+            padding: 25px;
+        }
+        
+        .equipment-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .equipment-specs {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .equipment-specs li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .equipment-specs i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* 质量控制网格 */
+        .quality-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .quality-item {
+            text-align: center;
+            padding: 40px 30px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quality-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+        
+        .quality-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 生产能力统计 */
+        .capacity-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        /* 生产优势 */
+        .advantages-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .advantages-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .advantage-point {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .advantage-point:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .advantage-point strong {
+            color: var(--primary-color);
+        }
+        
+        /* 咨询卡片 */
+        .consult-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .timeline-step:nth-child(odd),
+            .timeline-step:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 60px;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -75px;
+                right: auto;
+            }
+            
+            .production-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .production-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .production-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                width: 90%;
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -55px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .advantages-list {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .production-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .production-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 40px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -45px;
+            }
+            
+            .equipment-grid,
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ 顶部导航栏 ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- 公司Logo -->
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="天乙刀具商标" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- 桌面端导航菜单 -->
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li class="dropdown">
+                        <a href="#services" class="dropdown-toggle active">
+                            服务项目 <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="tool-production.html" class="dropdown-item active">刀具生产</a>
+                            <a href="tool-sharpening.html" class="dropdown-item">刀具修磨</a>
+                            <a href="after-sales.html" class="dropdown-item">售后服务</a>
+                        </div>
+                    </li>
+                    <li><a href="../products.html">产品中心</a></li>
+                    <li><a href="../about.html">关于我们</a></li>
+                    <li><a href="../index.html#contact">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ 刀具生产页面头部 ============ -->
+    <section class="production-hero">
+        <div class="container">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>刀具生产</span>
+            </div>
+            
+            <h1>专业刀具生产</h1>
+            <p>精密制造工艺与先进技术的完美结合，为您提供高品质超硬刀具</p>
+            <a href="#consult-section" class="btn" style="background: white; color: var(--primary-color);">立即咨询</a>
+        </div>
+    </section>
+    
+    <!-- ============ 生产流程时间线 ============ -->
+    <section class="process-timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>生产流程</h2>
+                <p>从原材料到成品，我们严格执行每一道工序，确保刀具性能卓越</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>材料筛选与检测</h3>
+                        <p>所有原材料均来自国内外知名供应商，进厂前经过严格的质量检测。PCD/PCBN复合片通过高精度仪器检测硬度、密度和内部缺陷，确保材料性能符合标准。</p>
+                        <div class="step-image">
+                            <img src="../images/material-check.jpg" alt="材料筛选与检测">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>设计优化与编程</h3>
+                        <p>根据客户需求和加工材料特性，使用CAD软件进行刀具设计优化。工程师团队结合多年经验，确保刀具几何角度、切削刃强度和排屑性能达到最佳状态。</p>
+                        <div class="step-image">
+                            <img src="../images/design-process.jpg" alt="设计优化与编程">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>精密加工与成型</h3>
+                        <p>采用五轴联动CNC加工中心、电火花加工和激光切割等高精度设备，确保刀具几何精度达到微米级。刀具基体采用优质硬质合金或高速钢，经过热处理提高强度和韧性。</p>
+                        <div class="step-image">
+                            <img src="../images/precision-machining.jpg" alt="精密加工与成型">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>焊接与钎焊</h3>
+                        <p>使用真空钎焊或高频焊接技术，将PCD/PCBN刀片与刀体牢固结合。严格控制焊接温度和时间，确保结合强度高、热影响区小，避免刀片损伤。</p>
+                        <div class="step-image">
+                            <img src="../images/welding-process.jpg" alt="焊接与钎焊">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">05</div>
+                        <h3>刃磨与抛光</h3>
+                        <p>采用进口高精度数控刃磨机床，配备金刚石砂轮进行刃口精磨。刃口粗糙度Ra≤0.2μm，确保切削锋利、排屑顺畅。最后进行表面抛光和防锈处理。</p>
+                        <div class="step-image">
+                            <img src="../images/grinding-process.jpg" alt="刃磨与抛光">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">06</div>
+                        <h3>质量检测与包装</h3>
+                        <p>每把刀具均经过高端设备全面检测。检测项目包括尺寸精度、几何角度和刃口质量等。合格产品使用专用包装，避免运输损伤。</p>
+                        <div class="step-image">
+                            <img src="../images/quality-check.jpg" alt="质量检测与包装">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 先进生产设备展示 ============ -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>先进生产设备</h2>
+                <p>采用国际一流的生产与检测设备，确保刀具性能稳定可靠</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/cnc-machine.jpg" alt="五轴联动CNC加工中心">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>五轴联动CNC加工中心</h3>
+                        <p>高端五轴联动加工中心，定位精度±0.002mm，用于复杂刀具基体的精密加工。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 控制系统：fanuc</li>
+                            <li><i class="fas fa-check"></i> 定位精度：±0.002mm</li>
+                            <li><i class="fas fa-check"></i> 最大转速：20,000rpm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/grinding-machine.jpg" alt="数控刃磨机床">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>数控刃磨机床</h3>
+                        <p>高端数控刃磨机床，配备金刚石砂轮，实现PCD/PCBN刀具高精度刃磨。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 刃磨精度：±0.005mm</li>
+                            <li><i class="fas fa-check"></i> 表面粗糙度：Ra≤0.2μm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/edm-machine.jpg" alt="电火花加工机床">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>精密电火花加工机床</h3>
+                        <p>日本进口电火花机床，用于PCD/PCBN刀具复杂型面的精密加工。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 品牌：fanuc</li>
+                            <li><i class="fas fa-check"></i> 加工精度：±0.003mm</li>
+                            <li><i class="fas fa-check"></i> 表面质量：Ra0.4-0.8μm</li>
+                            <li><i class="fas fa-check"></i> 电极损耗：≤0.1%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/welding-machine.jpg" alt="真空钎焊炉">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>真空钎焊炉</h3>
+                        <p>高温真空钎焊设备，确保PCD/PCBN刀片与刀体高强度结合，减少热损伤。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 最高温度：900°C</li>
+                            <li><i class="fas fa-check"></i> 真空度：5×10⁻⁴Pa</li>
+                            <li><i class="fas fa-check"></i> 控温精度：±3°C</li>
+                            <li><i class="fas fa-check"></i> 有效尺寸：Φ300×400mm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/measuring-machine.jpg" alt="基恩士检测仪">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>基恩士检测仪</h3>
+                        <p>高精度测量设备，用于刀具尺寸和几何精度的全面检测。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 品牌：KEYENCE</li>
+                            <li><i class="fas fa-check"></i> 测量精度：1.8+3L/1000μm</li>
+                            <li><i class="fas fa-check"></i> 测量范围：700×1000×600mm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/laser-machine.jpg" alt="激光切割机">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>光纤激光切割机</h3>
+                        <p>高功率光纤激光切割设备，用于PCD/PCBN复合片的精密切割。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 激光功率：650W</li>
+                            <li><i class="fas fa-check"></i> 切割精度：±0.01mm</li>
+                            <li><i class="fas fa-check"></i> 切割速度：0-100mm/s</li>
+                            <li><i class="fas fa-check"></i> 控制系统：PC-Based</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 质量控制体系 ============ -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>质量控制体系</h2>
+                <p>严格执行ISO9001质量管理体系，确保每一把刀具都符合最高标准</p>
+            </div>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>来料检验</h3>
+                    <p>所有原材料和配件进厂前均经过严格检验，包括材质证明、硬度测试、尺寸测量等，确保源头质量。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>过程控制</h3>
+                    <p>生产过程中设立多个质量控制点，每道工序完成后进行检验，不合格品绝不流入下一工序。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>成品检测</h3>
+                    <p>每把刀具出厂前均进行全尺寸检测和性能测试，包括尺寸精度、刃口质量等。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>认证体系</h3>
+                    <p>通过ISO9001质量管理体系认证，定期接受第三方审核，确保质量管理体系持续有效运行。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>持续改进</h3>
+                    <p>建立质量数据统计分析系统，定期评审质量绩效，实施持续改进措施，不断提升产品质量。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>客户反馈</h3>
+                    <p>建立客户质量反馈机制，及时处理客户质量问题，将客户需求转化为质量改进动力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 生产能力统计 ============ -->
+    <section class="capacity-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>生产能力</h2>
+                <p>先进的生产设施与专业团队，确保高效交付与稳定质量</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="200000">200000</div>
+                    <div class="stat-label">年生产能力（件）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">98</div>
+                    <div class="stat-label">产品合格率（%）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="18">18</div>
+                    <div class="stat-label">生产经验（年）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">99</div>
+                    <div class="stat-label">客户满意度（%）</div>
+                </div>
+            </div>
+            
+            <div class="advantages-list">
+                <h3>我们的生产优势</h3>
+                <div class="advantage-point">
+                    <strong>专业技术团队</strong>：拥有18年以上刀具设计制造经验的核心技术团队，能够为客户提供专业的刀具解决方案。
+                </div>
+                <div class="advantage-point">
+                    <strong>先进生产设备</strong>：引进高端国际一流的生产和检测设备，确保产品精度和质量稳定性。
+                </div>
+                <div class="advantage-point">
+                    <strong>严格质量控制</strong>：建立从原材料到成品的全过程质量控制体系，确保每一把刀具都符合最高标准。
+                </div>
+                <div class="advantage-point">
+                    <strong>快速响应能力</strong>：常规产品7-15天交付，紧急订单可加急处理，满足客户不同需求。
+                </div>
+                <div class="advantage-point">
+                    <strong>定制化服务</strong>：根据客户特定需求，提供刀具设计、工艺优化等全方位定制服务。
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 咨询区域 ============ -->
+    <section class="consult-section" id="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <h3>需要定制刀具解决方案？</h3>
+                <p>我们的技术团队将根据您的加工需求，提供专业的刀具设计、制造和技术支持服务。</p>
+                <a href="tel:+8613674260538" class="btn consult-btn">
+                    <i class="fas fa-phone"></i> 立即咨询
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 页脚 ============ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>天乙刀具</h3>
+                    <p>我们致力于通过专业技术和优质服务，为客户提供高品质、高精度的刀具解决方案。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../index.html#services">服务项目</a></li>
+                        <li><a href="../index.html#products">产品中心</a></li>
+                        <li><a href="../about.html">关于我们</a></li>
+                        <li><a href="../index.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 大连市经济技术开发区金湾南一路25-1号</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 天乙刀具有限公司. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 引入外部JavaScript文件 -->
+    <script src="../script.js"></script>
+    
+    <!-- 页面特定JavaScript -->
+    <script>
+        // 数字动画效果
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.getAttribute('data-count').includes('%')) {
+                        stat.textContent = Math.floor(current) + '%';
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+        
+        // 当元素进入视口时触发动画
+        function initNumberAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const capacitySection = document.querySelector('.capacity-section');
+            if (capacitySection) {
+                observer.observe(capacitySection);
+            }
+        }
+        
+        // 页面加载完成后初始化数字动画
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNumberAnimation);
+        } else {
+            initNumberAnimation();
+        }
+    </script>
+</body>
+</html>
