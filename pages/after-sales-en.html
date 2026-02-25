@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After-Sales Service丨Dalian Tianyi Cutting Tools Co., Ltd.丨Professional Tool Technical Support & Maintenance</title>
+    
+    <!-- SEO optimization -->
+    <meta name="description" content="Dalian Tianyi Cutting Tools provides professional PCD/PCBN tool after-sales service, including technical support, on-site service, training, and spare parts supply.">
+    <meta name="keywords" content="tool after-sales service, PCD tool maintenance, PCBN tool technical support, Tianyi tool service, tool warranty, tool usage training">
+    
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Shared CSS file -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- After-sales page specific styles (same as Chinese) -->
+    <style>
+        /* 售后服务页面头部 */
+        .after-sales-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../images/after-sales-hero.jpg') center/cover;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .after-sales-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .after-sales-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: transparent;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* 服务承诺 */
+        .commitment-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .commitment-card {
+            background-color: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .commitment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .commitment-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+        
+        .commitment-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 服务体系 */
+        .system-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .system-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .system-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .system-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .system-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .system-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .system-content {
+            padding: 25px;
+        }
+        
+        .system-features {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .system-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .system-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        /* 服务流程 */
+        .process-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .process-step:nth-child(odd) {
+            justify-content: flex-start;
+        }
+        
+        .process-step:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .step-content {
+            width: 45%;
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-step:nth-child(odd) .step-number {
+            right: -75px;
+        }
+        
+        .process-step:nth-child(even) .step-number {
+            left: -75px;
+        }
+        
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        /* 技术支持 */
+        .tech-support {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .support-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .support-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .support-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 保修政策 */
+        .warranty-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .warranty-content {
+            max-width: 900px;
+            margin: 40px auto 0;
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .warranty-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .warranty-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .warranty-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* 备件供应 */
+        .parts-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .part-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .part-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .part-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .part-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 培训服务 */
+        .training-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .training-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .training-content {
+            padding: 30px;
+        }
+        
+        .training-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .training-details {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .training-details li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .training-details li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .process-step:nth-child(odd),
+            .process-step:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 60px;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -75px;
+                right: auto;
+            }
+            
+            .after-sales-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .warranty-content {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .after-sales-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .after-sales-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                width: 90%;
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -55px;
+            }
+            
+            .system-grid,
+            .support-grid,
+            .parts-grid,
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .after-sales-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .after-sales-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 40px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -45px;
+            }
+            
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 语言切换器样式（与首页一致） */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ Header ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="../index-en.html" class="logo">
+                    <img src="../images/logo.png" alt="Tianyi Tools Logo" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- Desktop navigation -->
+                <ul class="nav-links">
+                    <li><a href="../index-en.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="tool-production-en.html" class="dropdown-item">Tool Production</a>
+                            <a href="tool-sharpening-en.html" class="dropdown-item">Tool Sharpening</a>
+                            <a href="after-sales-en.html" class="dropdown-item active">After-sales Service</a>
+                        </div>
+                    </li>
+                    <li><a href="../products-en.html">Products</a></li>
+                    <li><a href="../about-en.html">About Us</a></li>
+                    <li><a href="../index-en.html#contact">Contact</a></li>
+                </ul>
+
+                <!-- Language switcher -->
+                <div class="lang-switcher">
+                    <a href="after-sales.html">中文</a> |
+                    <a href="after-sales-en.html" class="active-lang">English</a> |
+                    <a href="after-sales-ja.html">日本語</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ After-sales Hero Section ============ -->
+    <section class="after-sales-hero">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index-en.html">Home</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>After-sales Service</span>
+            </div>
+            
+            <h1>Professional After-sales Service</h1>
+            <p>Comprehensive technical support and maintenance services to ensure you get the best tool experience and return on investment</p>
+            <a href="#consult-section" class="btn" style="background: white; color: var(--primary-color);">Contact Now</a>
+        </div>
+    </section>
+    
+    <!-- ============ Service Commitments ============ -->
+    <section class="commitment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Service Commitments</h2>
+                <p>Customer-centric, providing fast response, professional and efficient after-sales service</p>
+            </div>
+            
+            <div class="commitment-grid">
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Response</h3>
+                    <p>Respond to customer issues within 24 hours, provide initial solutions within 2 hours, minimizing downtime</p>
+                </div>
+                
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Professional Team</h3>
+                    <p>Technical support team with 18+ years of experience, familiar with the application and maintenance of various PCD/PCBN tools</p>
+                </div>
+                
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>All after-sales services follow strict quality standards to ensure problems are thoroughly resolved</p>
+                </div>
+                
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Full Support</h3>
+                    <p>From installation and commissioning to daily maintenance, providing technical support throughout the tool lifecycle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Service System ============ -->
+    <section class="system-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete After-sales Service System</h2>
+                <p>Multi-level, comprehensive service network ensures you get the support you need anytime, anywhere</p>
+            </div>
+            
+            <div class="system-grid">
+                <div class="system-card">
+                    <div class="system-header">
+                        <div class="system-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Remote Technical Support</h3>
+                        <p>Quick-response remote assistance</p>
+                    </div>
+                    <div class="system-content">
+                        <p>Provide remote technical support via phone, WeChat, email, etc., quickly solving common problems.</p>
+                        <ul class="system-features">
+                            <li>7×24 hour technical support hotline</li>
+                            <li>Remote fault diagnosis and guidance</li>
+                            <li>Process parameter optimization suggestions</li>
+                            <li>Online technical document query</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="system-card">
+                    <div class="system-header">
+                        <div class="system-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>On-site Service Support</h3>
+                        <p>Professional technicians visit</p>
+                    </div>
+                    <div class="system-content">
+                        <p>For complex issues, dispatch professional technical engineers to provide on-site service, ensuring fundamental problem resolution.</p>
+                        <ul class="system-features">
+                            <li>On-site troubleshooting and repair</li>
+                            <li>Tool installation and commissioning</li>
+                            <li>Equipment compatibility check</li>
+                            <li>Regular inspection and maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="system-card">
+                    <div class="system-header">
+                        <div class="system-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Training Service</h3>
+                        <p>Enhance customer skills</p>
+                    </div>
+                    <div class="system-content">
+                        <p>Provide systematic training to help customer operators master correct tool usage and maintenance methods.</p>
+                        <ul class="system-features">
+                            <li>Tool operation training</li>
+                            <li>Maintenance training</li>
+                            <li>Fault diagnosis training</li>
+                            <li>Safety operation training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Service Process ============ -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>After-sales Service Process</h2>
+                <p>Standardized service process ensures timely and effective handling of every customer issue</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="timeline-line"></div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>Issue Receipt & Registration</h3>
+                        <p>Customer submits service request via phone, WeChat, or email; customer service records issue details, contact information, and service needs.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>Initial Diagnosis & Response</h3>
+                        <p>Technical support engineer contacts customer within 2 hours, understands issue details remotely, provides preliminary solution or guidance.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>Solution Formulation & Confirmation</h3>
+                        <p>Based on complexity, formulate detailed solution including service method (remote/onsite), estimated time and cost, confirm with customer.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>Service Implementation</h3>
+                        <p>Implement service according to confirmed plan: remote support immediately, on-site service dispatched as scheduled.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">05</div>
+                        <h3>Problem Resolution & Acceptance</h3>
+                        <p>After service completion, verify problem resolution, customer accepts and confirms service result, fill in satisfaction evaluation.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">06</div>
+                        <h3>Service Tracking & Follow-up</h3>
+                        <p>Follow up within 7 days after service completion, understand service effect, collect improvement suggestions, establish customer service file.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Technical Support Channels ============ -->
+    <section class="tech-support">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Support Channels</h2>
+                <p>Multiple convenient contact methods ensure you get technical support anytime, anywhere</p>
+            </div>
+            
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Phone Support</h4>
+                    <p>7×24 hour technical support hotline, professional engineers answer technical questions online.</p>
+                    <p style="color: var(--primary-color); font-weight: bold; margin-top: 10px;">+86 13674260538</p>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email Support</h4>
+                    <p>Submit technical issues via email, we will reply with detailed solutions within 4 hours.</p>
+                    <p style="color: var(--primary-color); font-weight: bold; margin-top: 10px;">wangyuansheng73@163.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Spare Parts Supply ============ -->
+    <section class="parts-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Spare Parts Supply Service</h2>
+                <p>Fast supply of original spare parts ensures your production continuity</p>
+            </div>
+            
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h4>Original Inserts</h4>
+                    <p>Provide original PCD/PCBN inserts, ensuring perfect match with existing tools and consistent performance.</p>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Standard Accessories</h4>
+                    <p>Provide various standard tool accessories including collets, screws, shims, etc., for quick replacement.</p>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h4>Special Tools</h4>
+                    <p>Provide special tools for tool installation, disassembly, and adjustment, convenient for user self-maintenance.</p>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4>Fast Delivery</h4>
+                    <p>Adequate inventory of common spare parts, emergency orders shipped within 24 hours, minimizing downtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Consultation Section ============ -->
+    <section class="consult-section" id="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <h3>Need After-sales Support?</h3>
+                <p>Our professional team is always ready to provide technical support, troubleshooting, and training services to ensure your tools remain in optimal condition.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                    <a href="tel:+8613674260538" class="btn consult-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="mailto:wangyuansheng73@163.com" class="btn" style="background: white; color: var(--primary-color);">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Footer ============ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tianyi Tools</h3>
+                    <p>We are committed to providing high-quality, high-precision tooling solutions through professional technology and excellent service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index-en.html">Home</a></li>
+                        <li><a href="../index-en.html#services">Services</a></li>
+                        <li><a href="../products-en.html">Products</a></li>
+                        <li><a href="../about-en.html">About Us</a></li>
+                        <li><a href="../index-en.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> No. 25-1, Jinwannan First Road, Economic and Technological Development Zone, Dalian, China</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                        <li><i class="fas fa-clock"></i> Technical Support: 7×24 hours</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Tianyi Cutting Tools Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Shared JavaScript file -->
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Dalian Tianyi Cutting Tools Co., Ltd. | Leader in Cutting Tool Industry</title>
+
+    <!-- SEO optimization -->
+    <meta name="description" content="Dalian Tianyi Cutting Tools specializes in PCD tools, PCBN tools and customized cutting tools">
+    <meta name="keywords" content="PCD tools, PCBN tools, customized tools, diamond tools, cubic boron nitride tools">
+
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Shared CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Products page specific styles (same as original Chinese) -->
+    <style>
+        /* 产品页面特有样式 (与原中文版完全一致) */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/products-banner.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            margin-bottom: 50px;
+        }
+
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 10px;
+        }
+
+        /* 产品分类导航 */
+        .category-nav {
+            background-color: white;
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            position: sticky;
+            top: 70px;
+            z-index: 99;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-btn:hover {
+            background-color: rgba(26, 115, 232, 0.1);
+            color: var(--primary-color);
+        }
+
+        .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .category-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* 产品详细展示区 */
+        .product-detail-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .product-category-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .product-category-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .product-category-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .product-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .product-variants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .variant-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .variant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .variant-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .variant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .variant-card:hover .variant-image img {
+            transform: scale(1.05);
+        }
+
+        .variant-content {
+            padding: 25px;
+        }
+
+        .variant-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .variant-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .variant-specs {
+            margin-top: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .spec-name {
+            color: var(--text-light);
+        }
+
+        .spec-value {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* 技术参数表格 */
+        .tech-specs {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .spec-table th,
+        .spec-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .spec-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .spec-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* 应用领域 */
+        .applications {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .application-card {
+            text-align: center;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .application-card:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .application-card:hover h3,
+        .application-card:hover p {
+            color: white;
+        }
+
+        .application-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .application-card:hover .application-icon {
+            color: white;
+        }
+
+        .application-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .application-card p {
+            color: var(--text-light);
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* 产品对比 */
+        .comparison {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .comparison-table {
+            overflow-x: auto;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 992px) {
+            .product-variants {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .category-nav {
+                padding: 20px 0;
+            }
+
+            .category-list {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+
+            .category-btn {
+                white-space: nowrap;
+            }
+
+            .product-variants {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 60px;
+            }
+
+            .product-category-title h2 {
+                font-size: 2rem;
+            }
+
+            .spec-table {
+                font-size: 0.9rem;
+            }
+
+            .spec-table th,
+            .spec-table td {
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .applications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ 选型帮助部分样式 ============ */
+        .selection-help {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e4edf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .selection-help::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,30 Q50,10 70,30 T90,30 L90,70 Q70,90 50,70 T30,70 Z" fill="%23246beb" opacity="0.1"/></svg>');
+            background-size: contain;
+            opacity: 0.3;
+        }
+
+        .selection-help::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23246beb" opacity="0.1"/></svg>');
+            background-size: contain;
+            opacity: 0.2;
+        }
+
+        .help-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .help-content {
+            padding-right: 20px;
+        }
+
+        .help-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        }
+
+        .help-badge i {
+            margin-right: 8px;
+        }
+
+        .help-content h2 {
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .help-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .help-features {
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .help-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-help {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn-help:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 115, 232, 0.4);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .btn-outline-help {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-help:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-help i,
+        .btn-outline-help i {
+            margin-right: 8px;
+        }
+
+        /* 专家卡片样式 */
+        .help-experts {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .expert-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .expert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .expert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .expert-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #f0f7ff;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .expert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .expert-info h4 {
+            font-size: 1.4rem;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .expert-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .expert-experience {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .expert-specialties {
+            margin-bottom: 25px;
+        }
+
+        .expert-specialties h5 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .specialty-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .specialty-tags span {
+            background: #f0f7ff;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .specialty-tags span:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .expert-contact {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .expert-note {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.1);
+            border-left: 4px solid #ff9800;
+        }
+
+        .note-icon {
+            width: 50px;
+            height: 50px;
+            background: #ff9800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .note-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .expert-note p {
+            color: #5d4037;
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .expert-note strong {
+            color: #e65100;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .help-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .help-content {
+                padding-right: 0;
+            }
+
+            .help-content h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .selection-help {
+                padding: 80px 0;
+            }
+
+            .help-content h2 {
+                font-size: 2rem;
+            }
+
+            .help-cta {
+                flex-direction: column;
+            }
+
+            .btn-help,
+            .btn-outline-help {
+                width: 100%;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+
+            .expert-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .expert-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .expert-note {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .note-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .selection-help {
+                padding: 60px 0;
+            }
+
+            .help-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .feature-icon {
+                margin-bottom: 10px;
+            }
+
+            .specialty-tags {
+                justify-content: center;
+            }
+        }
+
+        /* 语言切换器样式（与首页一致） */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============ Header ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="index-en.html" class="logo">
+                    <img src="images/logo.png" alt="Tianyi Tools Logo" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+
+                <!-- Desktop navigation -->
+                <ul class="nav-links">
+                    <li><a href="index-en.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="pages/tool-production-en.html" class="dropdown-item">Tool Production</a>
+                            <a href="pages/tool-sharpening-en.html" class="dropdown-item">Tool Sharpening</a>
+                            <a href="pages/after-sales-en.html" class="dropdown-item">After-sales Service</a>
+                        </div>
+                    </li>
+                    <li><a href="products-en.html" class="active">Products</a></li>
+                    <li><a href="about-en.html">About Us</a></li>
+                    <li><a href="index-en.html#contact">Contact</a></li>
+                </ul>
+
+                <!-- Language switcher -->
+                <div class="lang-switcher">
+                    <a href="products.html">中文</a> |
+                    <a href="products-en.html" class="active-lang">English</a> |
+                    <a href="products-ja.html">日本語</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ Page Header ============ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Products Center</h1>
+            <p>Professional Manufacturing, Excellent Quality - Leader in Cutting Tool Industry</p>
+        </div>
+    </section>
+
+    <!-- ============ Breadcrumb ============ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index-en.html">Home</a>
+            <span>/</span>
+            <span>Products</span>
+        </div>
+    </div>
+
+    <!-- ============ Category Navigation ============ -->
+    <section class="category-nav">
+        <div class="container">
+            <div class="category-list">
+                <button class="category-btn active" data-category="pcd">
+                    <i class="fas fa-gem"></i> PCD Tools
+                </button>
+                <button class="category-btn" data-category="cbn">
+                    <i class="fas fa-atom"></i> PCBN Tools
+                </button>
+                <button class="category-btn" data-category="custom">
+                    <i class="fas fa-cogs"></i> Custom Tools
+                </button>
+                <button class="category-btn" data-category="material">
+                    <i class="fas fa-weight"></i> Material Selection
+                </button>
+                <button class="category-btn" data-category="application">
+                    <i class="fas fa-industry"></i> Applications
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PCD Tools Detailed Display ============ -->
+    <section id="pcd" class="product-detail-section active-category">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>PCD Tools</h2>
+                <p>Polycrystalline Diamond Tools, suitable for precision machining of non-ferrous and non-metallic materials</p>
+            </div>
+
+            <div class="product-variants">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <!-- Carousel container -->
+                        <div class="image-carousel" data-carousel-id="pcd-1">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active">
+                                    <img src="images/pcd-1-1.jpg" alt="PCD insert angle 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/pcd-1-2.jpg" alt="PCD insert angle 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0" role="button" aria-label="Image 1"></span>
+                                <span class="indicator" data-index="1" role="button" aria-label="Image 2"></span>
+                            </div>
+                            <div class="image-counter" aria-live="polite" aria-atomic="true">
+                                <span class="current-index">1</span> / <span class="total-images">2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCD Insert</h3>
+                        <p class="variant-description">For precision turning of non-ferrous metals such as aluminum and copper alloys.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Applicable materials</span><span class="spec-value">Aluminum, Copper alloys</span></div>
+                            <div class="spec-item"><span class="spec-name">Machining accuracy</span><span class="spec-value">±0.05mm</span></div>
+                            <div class="spec-item"><span class="spec-name">Service life</span><span class="spec-value">50-100 times of carbide</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="pcd-2">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/pcd-2-1.jpg" alt="PCD turning tool angle1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/pcd-2-2.jpg" alt="PCD turning tool angle2" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/pcd-2-3.jpg" alt="PCD turning tool angle3" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                            </div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">3</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCD Turning Tool</h3>
+                        <p class="variant-description">For precision turning of non-ferrous and non-metallic materials.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Applicable materials</span><span class="spec-value">Aluminum alloys, Composites</span></div>
+                            <div class="spec-item"><span class="spec-name">Machining accuracy</span><span class="spec-value">±0.02mm</span></div>
+                            <div class="spec-item"><span class="spec-name">Surface roughness</span><span class="spec-value">Ra0.1-0.4μm</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="pcd-3">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/pcd-3-1.jpg" alt="PCD drilling/reaming tool1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/pcd-3-2.jpg" alt="PCD drilling/reaming tool2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                            </div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCD Drilling & Reaming Tools</h3>
+                        <p class="variant-description">For precision drilling of difficult-to-machine materials such as high-silicon aluminum.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Applicable materials</span><span class="spec-value">High-silicon aluminum</span></div>
+                            <div class="spec-item"><span class="spec-name">Hole diameter range</span><span class="spec-value">Φ2-20mm</span></div>
+                            <div class="spec-item"><span class="spec-name">Aspect ratio</span><span class="spec-value">≤5:1</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical specifications table -->
+            <div class="tech-specs">
+                <div class="section-title">
+                    <h2>PCD Tools Technical Specifications</h2>
+                    <p>Detailed technical data and performance indicators</p>
+                </div>
+
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>Parameter</th><th>Value</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td>Diamond grain size</td><td>2-50μm</td><td>Selectable according to machining requirements</td></tr>
+                            <tr><td>Hardness</td><td>8000-9000 HV</td><td>Much higher than carbide tools</td></tr>
+                            <tr><td>Wear resistance</td><td>50-100 times of carbide</td><td>Greatly extends tool life</td></tr>
+                            <tr><td>Thermal conductivity</td><td>500-700 W/m·K</td><td>Good heat dissipation</td></tr>
+                            <tr><td>Operating temperature</td><td>≤700℃</td><td>Stable performance at high temperatures</td></tr>
+                            <tr><td>Surface roughness achieved</td><td>Ra0.1-0.4μm</td><td>Excellent surface quality</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PCBN Tools Detailed Display ============ -->
+    <section id="cbn" class="product-detail-section">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>PCBN Tools</h2>
+                <p>Cubic Boron Nitride Tools, suitable for hardened steel, cast iron and other difficult-to-machine materials</p>
+            </div>
+
+            <div class="product-variants">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="cbn-1">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/cbn-1-1.jpg" alt="PCBN grooving tool1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-1-2.jpg" alt="PCBN grooving tool2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCBN Grooving Tool</h3>
+                        <p class="variant-description">For precision grooving of hardened steel, cast iron and other difficult materials.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Applicable materials</span><span class="spec-value">Hardened steel, Cast iron</span></div>
+                            <div class="spec-item"><span class="spec-name">Hardness range</span><span class="spec-value">45-65 HRC</span></div>
+                            <div class="spec-item"><span class="spec-name">Heat resistance</span><span class="spec-value">Up to 1400℃</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="cbn-2">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/cbn-2-1.jpg" alt="PCBN insert1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-2-2.jpg" alt="PCBN insert2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCBN Insert</h3>
+                        <p class="variant-description">For precision turning of difficult-to-machine materials, hardened steel and cast iron.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Applicable materials</span><span class="spec-value">High-temperature alloys, hard metals</span></div>
+                            <div class="spec-item"><span class="spec-name">Cutting speed</span><span class="spec-value">100-300 m/min</span></div>
+                            <div class="spec-item"><span class="spec-name">Feed rate</span><span class="spec-value">0.05-0.3 mm/tooth</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="cbn-3">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/cbn-3-1.jpg" alt="PCBN drilling/reaming tool1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-3-2.jpg" alt="PCBN drilling/reaming tool2" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-3-3.jpg" alt="PCBN drilling/reaming tool3" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">3</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCBN Drilling & Reaming Tools</h3>
+                        <p class="variant-description">For precision drilling and reaming of high-hardness materials.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Applicable materials</span><span class="spec-value">Hardened steel, Cast iron</span></div>
+                            <div class="spec-item"><span class="spec-name">Hole diameter range</span><span class="spec-value">Φ10-100mm</span></div>
+                            <div class="spec-item"><span class="spec-name">Machining accuracy</span><span class="spec-value">IT6-IT7</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical specifications table -->
+            <div class="tech-specs">
+                <div class="section-title">
+                    <h2>PCBN Tools Technical Specifications</h2>
+                    <p>Detailed technical data and performance indicators</p>
+                </div>
+
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>Parameter</th><th>Value</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td>CBN content</td><td>50-95%</td><td>Selectable according to machining requirements</td></tr>
+                            <tr><td>Hardness</td><td>3000-5000 HV</td><td>Second only to diamond</td></tr>
+                            <tr><td>Heat resistance</td><td>1400℃</td><td>Maintains high hardness at elevated temperatures</td></tr>
+                            <tr><td>Wear resistance</td><td>30-50 times of carbide</td><td>Suitable for difficult-to-machine materials</td></tr>
+                            <tr><td>Thermal conductivity</td><td>100-130 W/m·K</td><td>Good heat dissipation</td></tr>
+                            <tr><td>Chemical stability</td><td>Excellent</td><td>No reaction with iron group elements</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ Custom Tools Detailed Display ============ -->
+    <section id="custom" class="product-detail-section">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>Custom Tools</h2>
+                <p>Tailored tool solutions according to specific customer requirements</p>
+            </div>
+
+            <div class="product-variants">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="custom-1">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/custom-1-1.jpg" alt="Custom tool1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-1-2.jpg" alt="Custom tool2" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-1-3.jpg" alt="Custom tool3" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">3</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">Non-standard Tools</h3>
+                        <p class="variant-description">Customized shapes and sizes according to customer drawings and technical requirements.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Customization scope</span><span class="spec-value">Shape, size, material</span></div>
+                            <div class="spec-item"><span class="spec-name">Delivery time</span><span class="spec-value">10-20 days</span></div>
+                            <div class="spec-item"><span class="spec-name">Minimum order quantity</span><span class="spec-value">Depends on drawing</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="custom-2">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/custom-2-1.jpg" alt="Milling cutter arbor1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-2-2.jpg" alt="Milling cutter arbor2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">Milling Cutter Arbor</h3>
+                        <p class="variant-description">For complex shape and high-precision milling operations.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Function combination</span><span class="spec-value">Milling</span></div>
+                            <div class="spec-item"><span class="spec-name">Processing efficiency</span><span class="spec-value">Increased by 30-50%</span></div>
+                            <div class="spec-item"><span class="spec-name">Applicable machine</span><span class="spec-value">Machining center, turn-mill composite</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="custom-3">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/custom-3-1.jpg" alt="Special coated tool1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-3-2.jpg" alt="Special coated tool2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">Special Coated Tools</h3>
+                        <p class="variant-description">Tools with custom coatings tailored to the workpiece material.</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">Coating types</span><span class="spec-value">TiN, TiCN, TiAlN etc.</span></div>
+                            <div class="spec-item"><span class="spec-name">Coating thickness</span><span class="spec-value">2-5μm</span></div>
+                            <div class="spec-item"><span class="spec-name">Service life</span><span class="spec-value">Increased by 3-5 times</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customization process -->
+            <div class="applications">
+                <div class="section-title">
+                    <h2>Customization Process</h2>
+                    <p>Complete service process from requirement to delivery</p>
+                </div>
+
+                <div class="applications-grid">
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-comments"></i></div><h3>Requirement communication</h3><p>Detailed understanding of customer processing needs and technical requirements</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-pencil-ruler"></i></div><h3>Solution design</h3><p>Design tool geometry, select materials and coating solutions</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-hammer"></i></div><h3>Sample manufacturing</h3><p>Produce samples and conduct testing verification</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-shipping-fast"></i></div><h3>Mass production</h3><p>After sample approval, proceed with mass production and delivery</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ Material Selection Guide ============ -->
+    <section id="material" class="product-detail-section">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>Material Selection Guide</h2>
+                <p>Select appropriate tool material and type according to workpiece material</p>
+            </div>
+
+            <!-- Material selection table -->
+            <div class="tech-specs">
+                <div class="section-title"><h3>Material Selection Reference Table</h3><p>Recommended tool types and parameters for different workpiece materials</p></div>
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>Workpiece material category</th><th>Specific examples</th><th>Recommended tool type</th><th>Recommended tool material</th><th>Cutting speed range</th><th>Feed rate range</th></tr></thead>
+                        <tbody>
+                            <tr><td>Non-ferrous metals</td><td>Aluminum alloys, Copper alloys, Magnesium alloys</td><td>PCD milling cutter, turning tool</td><td>PCD</td><td>300-800 m/min</td><td>0.1-0.4 mm/tooth</td></tr>
+                            <tr><td>Cast iron</td><td>Gray iron, Ductile iron</td><td>PCBN turning tool, milling cutter</td><td>PCBN</td><td>100-300 m/min</td><td>0.1-0.3 mm/tooth</td></tr>
+                            <tr><td>Hardened steel</td><td>45-65 HRC hardened steel</td><td>PCBN turning tool, milling cutter</td><td>PCBN (high CBN content)</td><td>80-200 m/min</td><td>0.05-0.2 mm/tooth</td></tr>
+                            <tr><td>High-temperature alloys</td><td>Inconel, Titanium alloys</td><td>PCBN tools</td><td>PCBN</td><td>50-120 m/min</td><td>0.05-0.15 mm/tooth</td></tr>
+                            <tr><td>Composites</td><td>Carbon fiber, Glass fiber</td><td>PCD milling cutter, drill</td><td>PCD (fine grain)</td><td>200-500 m/min</td><td>0.05-0.2 mm/tooth</td></tr>
+                            <tr><td>Powder metallurgy</td><td>Iron-based, Copper-based</td><td>PCBN tools</td><td>PCBN</td><td>60-150 m/min</td><td>0.08-0.2 mm/tooth</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Selection principles -->
+            <div class="applications" style="margin-top: 50px;">
+                <div class="section-title"><h3>Tool Selection Guidelines</h3><p>Choose appropriate tools according to machining requirements and conditions</p></div>
+                <div class="applications-grid">
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-balance-scale"></i></div><h3>Hardness matching</h3><p>Tool hardness should be 2-3 times higher than workpiece material; PCD for non-ferrous, PCBN for hardened steel and cast iron.</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-thermometer-half"></i></div><h3>Heat resistance</h3><p>For high-temperature environments, use PCBN; PCD operating temperature ≤700℃.</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-exchange-alt"></i></div><h3>Chemical stability</h3><p>Avoid chemical reactions between tool and workpiece; PCBN does not react with iron group elements, suitable for steel and iron.</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-dollar-sign"></i></div><h3>Economy</h3><p>Consider tool cost, machining efficiency, and service life; PCD/PCBN recommended for long runs.</p></div>
+                </div>
+            </div>
+
+            <!-- Cutting parameters -->
+            <div class="tech-specs" style="margin-top: 50px;">
+                <div class="section-title"><h3>Cutting Parameter Selection Guide</h3><p>Recommended cutting parameters for different tool materials</p></div>
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>Tool material</th><th>Applicable material hardness</th><th>Recommended cutting speed</th><th>Recommended feed rate</th><th>Depth of cut</th><th>Cooling method</th></tr></thead>
+                        <tbody>
+                            <tr><td>PCD tools</td><td>Non-ferrous &lt; 300HB</td><td>300-1000 m/min</td><td>0.05-0.4 mm/tooth</td><td>0.1-3 mm</td><td>Dry or minimal lubrication</td></tr>
+                            <tr><td>PCBN tools</td><td>45-65 HRC</td><td>80-300 m/min</td><td>0.05-0.3 mm/tooth</td><td>0.1-2 mm</td><td>Coolant recommended</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tool wear & life -->
+            <div class="faq-section" style="margin-top: 50px;">
+                <div class="section-title"><h3>Tool Wear and Life Management</h3><p>How to identify tool wear and predict tool life</p></div>
+                <div class="faq-list">
+                    <div class="faq-item"><div class="faq-question"><h3>When does a PCD tool need regrinding?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>PCD tool requires regrinding when:</p><ul><li>Flank wear width VB exceeds 0.2mm</li><li>Cutting force increases significantly, power consumption increases by more than 20%</li><li>Machined surface roughness Ra exceeds process requirements</li><li>Visible chipping or cracks appear</li><li>Machining dimensional accuracy goes out of tolerance</li></ul></div></div>
+                    <div class="faq-item"><div class="faq-question"><h3>Factors affecting PCBN tool life?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>PCBN tool life is mainly affected by:</p><ul><li><strong>Workpiece hardness:</strong> higher hardness accelerates wear</li><li><strong>CBN content:</strong> higher content improves wear resistance</li><li><strong>Cutting parameters:</strong> excessive speed, feed, or depth shorten life</li><li><strong>Cooling conditions:</strong> proper cooling extends life</li><li><strong>Machine stability:</strong> vibration and impact accelerate wear</li><li><strong>Tool geometry:</strong> proper edge preparation improves life</li></ul></div></div>
+                    <div class="faq-item"><div class="faq-question"><h3>How to extend the life of superhard tools?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>Methods to extend superhard tool life:</p><ul><li>Select tool material and grade matching the workpiece</li><li>Optimize cutting parameters, avoid excessively high or low speeds</li><li>Use appropriate coolant and cooling method</li><li>Ensure machine rigidity and stability, reduce vibration</li><li>Regularly inspect tool wear and regrind in time</li><li>Choose suitable tool geometry and edge preparation</li><li>Keep workpiece material consistent, avoid hard spots or inclusions</li></ul></div></div>
+                </div>
+            </div>
+
+            <!-- Selection Help -->
+            <section class="selection-help">
+                <div class="container">
+                    <div class="help-container">
+                        <div class="help-content">
+                            <div class="help-badge"><span><i class="fas fa-star"></i> Professional Service</span></div>
+                            <h2>Need Selection Help?</h2>
+                            <p class="help-subtitle">Our technical experts are ready to provide professional tool selection advice anytime</p>
+                            <div class="help-features">
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>Quick response</h4><p>Professional selection advice within 24 hours</p></div></div>
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>Free testing</h4><p>Free sample testing service available</p></div></div>
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>Expert consultation</h4><p>Technical experts with 25+ years of experience</p></div></div>
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>On-site support</h4><p>Technicians visit for process optimization guidance</p></div></div>
+                            </div>
+                            <div class="help-cta">
+                                <a href="index-en.html#contact" class="btn btn-help"><i class="fas fa-headset"></i> Consult Expert Now</a>
+                                <a href="tel:+8613998631489" class="btn btn-outline-help"><i class="fas fa-phone-alt"></i> Call Directly</a>
+                            </div>
+                        </div>
+                        <div class="help-experts">
+                            <div class="expert-card">
+                                <div class="expert-header">
+                                    <div class="expert-image"><img src="images/expert-1.jpg" alt="Technical expert"></div>
+                                    <div class="expert-info"><h4>Mr. Wang</h4><p class="expert-title">Technical Director</p><p class="expert-experience">25 years in tool industry</p></div>
+                                </div>
+                                <div class="expert-specialties"><h5>Specialties</h5><div class="specialty-tags"><span>PCD tool design</span><span>PCBN tool applications</span><span>Process optimization</span></div></div>
+                                <div class="expert-contact"><div class="contact-item"><i class="fas fa-phone"></i><span>+86 13998631489</span></div><div class="contact-item"><i class="fas fa-envelope"></i><span>wangyuansheng73@163.com</span></div></div>
+                            </div>
+                            <div class="expert-note"><div class="note-icon"><i class="fas fa-lightbulb"></i></div><p>We promise: <strong>free</strong> tool selection consultation and process optimization advice</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- ============ Applications ============ -->
+    <section id="application" class="applications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Applications</h2>
+                <p>Our tools are widely used in various industrial fields</p>
+            </div>
+            <div class="applications-grid">
+                <div class="application-card"><div class="application-icon"><i class="fas fa-car"></i></div><h3>Automotive</h3><p>Engine components, transmission, braking systems</p></div>
+                <div class="application-card"><div class="application-icon"><i class="fas fa-plane"></i></div><h3>Aerospace</h3><p>Aircraft engines, landing gear, structural parts</p></div>
+                <div class="application-card"><div class="application-icon"><i class="fas fa-cogs"></i></div><h3>Precision machinery</h3><p>Molds, precision parts, medical devices</p></div>
+                <div class="application-card"><div class="application-icon"><i class="fas fa-microchip"></i></div><h3>Electronics</h3><p>Semiconductors, connectors, heat sinks</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about tool selection, usage and maintenance</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question"><h3>How to choose the right PCD grain size?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>The choice of PCD grain size depends mainly on the workpiece material and surface finish requirements. Coarse grain (10-50μm) is suitable for roughing and interrupted cutting, offering better wear resistance; fine grain (2-10μm) is suitable for finishing, providing better surface quality.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>What materials are PCBN tools suitable for?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>PCBN tools are mainly suitable for machining difficult-to-machine materials with hardness above 45HRC, such as hardened steel, cast iron, high-temperature alloys, and hard metals.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>What is the delivery time for custom tools?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>Delivery time for custom tools depends on complexity and quantity. Simple non-standard tools typically take 10-20 days, while complex combined tools may take 15-30 days. Express service is available for urgent needs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>How to extend tool life?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>Key factors for extending tool life include: selecting appropriate cutting parameters, using suitable coolant, regularly inspecting tool wear, timely regrinding, and maintaining machine accuracy and stability.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ Footer ============ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tianyi Tools</h3>
+                    <p>We are committed to providing high-quality, high-precision tooling solutions through professional technology and excellent service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index-en.html">Home</a></li>
+                        <li><a href="index-en.html#services">Services</a></li>
+                        <li><a href="products-en.html">Products</a></li>
+                        <li><a href="about-en.html">About Us</a></li>
+                        <li><a href="index-en.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> No. 25-1, Jinwannan First Road, Economic and Technological Development Zone, Dalian, China</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Tianyi Cutting Tools Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared JavaScript file -->
+    <script src="script.js"></script>
+
+    <!-- Products page specific script (same as original Chinese) -->
+    <script>
+        // 产品页面特有脚本
+        document.addEventListener('DOMContentLoaded', function () {
+            // 产品分类切换
+            const categoryBtns = document.querySelectorAll('.category-btn');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    console.log('Clicked category:', category);
+
+                    // 更新按钮状态
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // 1. 先隐藏所有产品详情部分
+                    const productSections = document.querySelectorAll('.product-detail-section');
+                    productSections.forEach(section => {
+                        section.style.display = 'none';
+                        console.log('Hidden:', section.id);
+                    });
+
+                    // 2. 隐藏应用领域部分（如果存在）
+                    const appSection = document.getElementById('application');
+                    if (appSection) {
+                        appSection.style.display = 'none';
+                        console.log('Hidden application');
+                    }
+
+                    // 3. 显示选中的部分
+                    if (category === 'application') {
+                        // 显示应用领域
+                        if (appSection) {
+                            appSection.style.display = 'block';
+                            console.log('Display application');
+                            appSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    } else {
+                        // 显示对应的产品部分
+                        const targetSection = document.getElementById(category);
+                        if (targetSection) {
+                            targetSection.style.display = 'block';
+                            console.log('Display:', category);
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // 初始状态：只显示PCD刀具部分
+            document.getElementById('pcd').style.display = 'block';
+
+            // 隐藏其他所有部分
+            const otherSections = document.querySelectorAll('#cbn, #custom, #material');
+            otherSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // 如果有应用领域部分，也初始隐藏
+            const appSection = document.getElementById('application');
+            if (appSection) {
+                appSection.style.display = 'none';
+            }
+
+            // 常见问题展开/收起
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', function () {
+                    // 关闭其他FAQ
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // 切换当前FAQ
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 图片懒加载（如果有）
+            const images = document.querySelectorAll('.variant-image img');
+
+            if (images.length > 0) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.getAttribute('data-src');
+
+                            if (src) {
+                                img.setAttribute('src', src);
+                                img.removeAttribute('data-src');
+                            }
+
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                }, { rootMargin: '100px' });
+
+                images.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+
+            // 页面加载动画
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.3s ease';
+            }, 100);
+
+            // 表格响应式处理（如果需要）
+            const tables = document.querySelectorAll('.spec-table');
+            if (tables.length > 0) {
+                tables.forEach(table => {
+                    // 检查是否已经有容器
+                    if (!table.parentNode.classList.contains('table-container')) {
+                        const container = document.createElement('div');
+                        container.className = 'table-container';
+                        container.style.overflowX = 'auto';
+                        container.style.marginBottom = '20px';
+
+                        table.parentNode.insertBefore(container, table);
+                        container.appendChild(table);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

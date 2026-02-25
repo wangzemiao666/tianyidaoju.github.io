@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Sharpening丨Dalian Tianyi Cutting Tools Co., Ltd.丨Professional PCD/PCBN Tool Sharpening Service</title>
+    
+    <!-- SEO optimization -->
+    <meta name="description" content="Dalian Tianyi Cutting Tools provides professional PCD and PCBN tool sharpening services, offering high-precision, high-efficiency tool restoration and remanufacturing solutions.">
+    <meta name="keywords" content="tool sharpening, PCD tool sharpening, PCBN tool sharpening, Tianyi tool sharpening, superhard tool restoration, tool remanufacturing">
+    
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Shared CSS file -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Tool sharpening page specific styles (same as Chinese) -->
+    <style>
+        /* 刀具修磨页面头部 */
+        .sharpening-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../images/sharpening-hero.jpg') center/cover;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .sharpening-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .sharpening-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: transparent;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* 修磨优势网格 */
+        .advantages-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .advantage-card {
+            background-color: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .advantage-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 修磨流程时间线 */
+        .process-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .process-step:nth-child(odd) {
+            justify-content: flex-start;
+        }
+        
+        .process-step:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .step-content {
+            width: 45%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-step:nth-child(odd) .step-number {
+            right: -75px;
+        }
+        
+        .process-step:nth-child(even) .step-number {
+            left: -75px;
+        }
+        
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        /* 修磨服务类型 */
+        .services-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-features {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        /* 设备展示 */
+        .equipment-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .equipment-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .equipment-image {
+            height: 200px;
+            background-color: #e4edf5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .equipment-content {
+            padding: 25px;
+        }
+        
+        .equipment-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* 质量保证 */
+        .quality-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .quality-item {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quality-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+        
+        .quality-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* 统计数据 */
+        .stats-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        /* 咨询卡片 */
+        .consult-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .process-step:nth-child(odd),
+            .process-step:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 60px;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -75px;
+                right: auto;
+            }
+            
+            .sharpening-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sharpening-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .sharpening-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                width: 90%;
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -55px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .sharpening-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .sharpening-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 40px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -45px;
+            }
+            
+            .services-grid,
+            .equipment-grid,
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 语言切换器样式（与首页一致） */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ Header ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="../index-en.html" class="logo">
+                    <img src="../images/logo.png" alt="Tianyi Tools Logo" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- Desktop navigation -->
+                <ul class="nav-links">
+                    <li><a href="../index-en.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="tool-production-en.html" class="dropdown-item">Tool Production</a>
+                            <a href="tool-sharpening-en.html" class="dropdown-item active">Tool Sharpening</a>
+                            <a href="after-sales-en.html" class="dropdown-item">After-sales Service</a>
+                        </div>
+                    </li>
+                    <li><a href="../products-en.html">Products</a></li>
+                    <li><a href="../about-en.html">About Us</a></li>
+                    <li><a href="../index-en.html#contact">Contact</a></li>
+                </ul>
+
+                <!-- Language switcher -->
+                <div class="lang-switcher">
+                    <a href="tool-sharpening.html">中文</a> |
+                    <a href="tool-sharpening-en.html" class="active-lang">English</a> |
+                    <a href="tool-sharpening-ja.html">日本語</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ Tool Sharpening Hero Section ============ -->
+    <section class="sharpening-hero">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index-en.html">Home</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>Tool Sharpening</span>
+            </div>
+            
+            <h1>Professional Tool Sharpening Service</h1>
+            <p>High-precision restoration and remanufacturing for your PCD and PCBN tools, extending tool life and reducing production costs</p>
+            <a href="#consult-section" class="btn" style="background: white; color: var(--primary-color);">Consult Now</a>
+        </div>
+    </section>
+    
+    <!-- ============ Sharpening Advantages ============ -->
+    <section class="advantages-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Sharpening Service?</h2>
+                <p>Professional tool sharpening not only restores tool performance but also significantly reduces your production costs</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Cost Saving</h3>
+                    <p>Sharpening costs are only 40%-60% of new tools, greatly reducing tool procurement expenses</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Standard sharpening cycle: 3-7 days, emergency orders completed in 24-48 hours</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Sharpened tools achieve over 90% of new tool performance, with quality guarantee</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Eco-friendly & Sustainable</h3>
+                    <p>Extend tool life, reduce resource waste, practice green manufacturing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Sharpening Process Timeline ============ -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sharpening Process</h2>
+                <p>Standardized five-step sharpening process ensures each tool restores optimal performance</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="timeline-line"></div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>Tool Inspection & Evaluation</h3>
+                        <p>Comprehensive inspection using precision measuring equipment to assess wear, geometric accuracy, and repair feasibility, developing a customized sharpening plan.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>Cleaning & Pre-treatment</h3>
+                        <p>Thorough removal of oil, chips, and contaminants using standard cleaning techniques, preparing for subsequent sharpening steps.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>Precision Sharpening</h3>
+                        <p>Using high-end CNC grinding machines with diamond wheels, precise sharpening according to original design parameters to restore geometric accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>Edge Treatment & Polishing</h3>
+                        <p>Precision processing and polishing of the sharpened edge to ensure cutting edge sharpness Ra≤0.2μm, improving cutting performance and tool life.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">05</div>
+                        <h3>Final Inspection & Packaging</h3>
+                        <p>Full dimensional inspection after sharpening; qualified products undergo rust prevention treatment and professional packaging.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Sharpening Service Types ============ -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sharpening Service Types</h2>
+                <p>Customized sharpening solutions for different tool types and wear conditions</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3>Standard Edge Sharpening</h3>
+                        <p>For slightly worn tools</p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-image">
+                            <img src="../images/sharpening-standard.jpg" alt="Standard edge sharpening process" loading="lazy">
+                            <div class="image-overlay">
+                                <span>Standard Edge Sharpening</span>
+                            </div>
+                        </div>
+                        <p>For PCD/PCBN tools with slight edge wear, restore original geometric angles and sharpness to ensure cutting performance.</p>
+                        <ul class="service-features">
+                            <li>Restore original geometric accuracy</li>
+                            <li>Cutting edge sharpness Ra≤0.2μm</li>
+                            <li>Sharpening cycle: 3-5 days</li>
+                            <li>Post-sharpening performance: over 95% of new tool</li>
+                        </ul>
+                        <div class="service-applications">
+                            <span class="application-tag">Milling cutters</span>
+                            <span class="application-tag">Drills</span>
+                            <span class="application-tag">Turning tools</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Complex Tool Sharpening</h3>
+                        <p>For multi-edge, special angle tools</p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-image">
+                            <img src="../images/sharpening-complex.jpg" alt="Complex tool sharpening process" loading="lazy">
+                            <div class="image-overlay">
+                                <span>Complex Tool Sharpening</span>
+                            </div>
+                        </div>
+                        <p>Precision sharpening for PCD/PCBN tools with complex geometries, multiple edges, and special angles, restoring complex contours.</p>
+                        <ul class="service-features">
+                            <li>Precision repair using wire EDM</li>
+                            <li>Maintain complex geometric shapes</li>
+                            <li>Sharpening cycle: 5-7 days</li>
+                            <li>Suitable for form tools</li>
+                        </ul>
+                        <div class="service-applications">
+                            <span class="application-tag">Form tools</span>
+                            <span class="application-tag">Step drills</span>
+                            <span class="application-tag">Special angle tools</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <h3>Insert Replacement Sharpening</h3>
+                        <p>For severely worn or damaged tools</p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-image">
+                            <img src="../images/sharpening-replace.jpg" alt="Insert replacement sharpening process" loading="lazy">
+                            <div class="image-overlay">
+                                <span>Insert Replacement Sharpening</span>
+                            </div>
+                        </div>
+                        <p>For severely worn, chipped, or damaged tools, perform insert replacement and complete restoration to restore functionality.</p>
+                        <ul class="service-features">
+                            <li>Repair severely worn tools</li>
+                            <li>Replace damaged inserts</li>
+                            <li>Overall performance recovery</li>
+                            <li>Sharpening cycle: 7-10 days</li>
+                            <li>Cost saving over 60%</li>
+                        </ul>
+                        <div class="service-applications">
+                            <span class="application-tag">Severely worn tools</span>
+                            <span class="application-tag">Chipped tools</span>
+                            <span class="application-tag">Insert replacement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Sharpening Equipment Showcase ============ -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advanced Sharpening Equipment</h2>
+                <p>Using world-class sharpening and inspection equipment to ensure sharpening quality and precision</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/grinding-machine.jpg" alt="CNC Grinding Machine">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>CNC Grinding Machine</h3>
+                        <p>High-end CNC grinding equipment with diamond wheels for precision sharpening of PCD/PCBN tools.</p>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/measuring-machine.jpg" alt="KEYENCE Measuring Instrument">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>KEYENCE Measuring Instrument</h3>
+                        <p>High-precision inspection equipment for comprehensive measurement of tool dimensions and geometric accuracy before and after sharpening.</p>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/microscope.jpg" alt="Universal Tool Microscope">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Universal Tool Microscope</h3>
+                        <p>High-magnification universal tool microscope for precision inspection and analysis of cutting edge quality and wear condition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Quality Assurance ============ -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quality Assurance</h2>
+                <p>Strict sharpening quality control and inspection standards ensure every sharpened tool meets the highest standards</p>
+            </div>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h4>Dimensional Accuracy Inspection</h4>
+                    <p>Post-sharpening dimensional accuracy controlled within ±0.01mm</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h4>Cutting Edge Quality Inspection</h4>
+                    <p>Cutting edge roughness Ra≤0.2μm, ensuring sharp cutting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Statistics ============ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Sharpening Capacity</h2>
+                <p>Professional team and equipment provide efficient sharpening services for customers</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5000">5000</div>
+                    <div class="stat-label">Annual sharpening capacity (pcs)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">99</div>
+                    <div class="stat-label">Customer satisfaction (%)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="40">40</div>
+                    <div class="stat-label">Cost saving rate (%)</div>
+                </div>
+            </div>
+            
+            <div style="max-width: 900px; margin: 60px auto 0; padding: 30px; background-color: white; border-radius: 8px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px; text-align: center;">Advantages of Sharpening Service</h3>
+                <div style="line-height: 1.8;">
+                    <p style="margin-bottom: 15px;"><strong>1. Professional Technical Team</strong>: Technical team with over 18 years of tool sharpening experience, familiar with sharpening processes for various PCD/PCBN tools.</p>
+                    <p style="margin-bottom: 15px;"><strong>2. Advanced Sharpening Equipment</strong>: Imported world-class sharpening and inspection equipment ensuring sharpening accuracy and quality stability.</p>
+                    <p style="margin-bottom: 15px;"><strong>3. Strict Quality Control</strong>: Full-process quality control system from receipt to delivery, ensuring every sharpened tool meets standards.</p>
+                    <p style="margin-bottom: 15px;"><strong>4. Quick Response Service</strong>: Standard sharpening cycle 3-7 days, emergency orders expedited to minimize customer downtime.</p>
+                    <p><strong>5. Cost Optimization Solutions</strong>: Provide optimal sharpening solutions based on tool wear conditions, helping customers reduce tool usage costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Consultation Section ============ -->
+    <section class="consult-section" id="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <h3>Need Tool Sharpening Service?</h3>
+                <p>Our technical team will provide professional tool inspection, evaluation, and sharpening solutions to help you reduce production costs.</p>
+                <a href="tel:+8613674260538" class="btn consult-btn">
+                    <i class="fas fa-phone"></i> Consult Now
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Footer ============ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tianyi Tools</h3>
+                    <p>We are committed to providing high-quality, high-precision tooling solutions through professional technology and excellent service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index-en.html">Home</a></li>
+                        <li><a href="../index-en.html#services">Services</a></li>
+                        <li><a href="../products-en.html">Products</a></li>
+                        <li><a href="../about-en.html">About Us</a></li>
+                        <li><a href="../index-en.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> No. 25-1, Jinwannan First Road, Economic and Technological Development Zone, Dalian, China</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Tianyi Cutting Tools Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Shared JavaScript file -->
+    <script src="../script.js"></script>
+    
+    <!-- Page specific JavaScript -->
+    <script>
+        // Number animation effect
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.getAttribute('data-count').includes('%')) {
+                        stat.textContent = Math.floor(current) + '%';
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+        
+        // Trigger animation when element enters viewport
+        function initNumberAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        }
+        
+        // Initialize number animation after page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNumberAnimation);
+        } else {
+            initNumberAnimation();
+        }
+    </script>
+</body>
+</html>

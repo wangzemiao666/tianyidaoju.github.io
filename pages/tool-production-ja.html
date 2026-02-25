@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具製造丨大連天乙刀具有限会社丨専門的なPCD/PCBN工具製造</title>
+    
+    <!-- SEO最適化 -->
+    <meta name="description" content="大連天乙刀具のPCD/PCBN工具製造プロセスを紹介。生産設備、工程、品質管理体制をご覧いただけます。">
+    <meta name="keywords" content="工具製造,PCD工具製造,PCBN工具製造,天乙工具製造工程,超硬工具製造">
+    
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 共有CSSファイル -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- 工具製造ページ固有スタイル (中国語版と同一) -->
+    <style>
+        /* 工具製造ページヘッダー */
+        .production-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../images/production-hero.jpg') center/cover;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .production-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .production-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* パンくずリスト */
+        .breadcrumb {
+            background-color: transparent;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* 製造工程タイムライン */
+        .process-timeline {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-step {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .timeline-step:nth-child(odd) {
+            justify-content: flex-start;
+        }
+        
+        .timeline-step:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .step-content {
+            width: 45%;
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-step:nth-child(odd) .step-number {
+            right: -75px;
+        }
+        
+        .timeline-step:nth-child(even) .step-number {
+            left: -75px;
+        }
+        
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .step-image {
+            margin-top: 20px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .step-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .step-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 製造設備グリッド */
+        .equipment-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .equipment-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .equipment-image {
+            height: 220px;
+            background-color: #e4edf5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .equipment-content {
+            padding: 25px;
+        }
+        
+        .equipment-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .equipment-specs {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .equipment-specs li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .equipment-specs i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* 品質管理体制グリッド */
+        .quality-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .quality-item {
+            text-align: center;
+            padding: 40px 30px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quality-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+        
+        .quality-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 生産能力統計 */
+        .capacity-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        /* 製造上の優位性 */
+        .advantages-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .advantages-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .advantage-point {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .advantage-point:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .advantage-point strong {
+            color: var(--primary-color);
+        }
+        
+        /* 相談カード */
+        .consult-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .timeline-step:nth-child(odd),
+            .timeline-step:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 60px;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -75px;
+                right: auto;
+            }
+            
+            .production-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .production-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .production-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                width: 90%;
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -55px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .advantages-list {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .production-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .production-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 40px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -45px;
+            }
+            
+            .equipment-grid,
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 言語切替スタイル (トップページと統一) */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ ヘッダー ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- ロゴ -->
+                <a href="../index-ja.html" class="logo">
+                    <img src="../images/logo.png" alt="天乙刀具 ロゴ" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- デスクトップナビ -->
+                <ul class="nav-links">
+                    <li><a href="../index-ja.html">ホーム</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">
+                            サービス <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="tool-production-ja.html" class="dropdown-item active">工具製造</a>
+                            <a href="tool-sharpening-ja.html" class="dropdown-item">工具再研磨</a>
+                            <a href="after-sales-ja.html" class="dropdown-item">アフターサービス</a>
+                        </div>
+                    </li>
+                    <li><a href="../products-ja.html">製品情報</a></li>
+                    <li><a href="../about-ja.html">会社概要</a></li>
+                    <li><a href="../index-ja.html#contact">お問い合わせ</a></li>
+                </ul>
+
+                <!-- 言語切替 -->
+                <div class="lang-switcher">
+                    <a href="tool-production.html">中文</a> |
+                    <a href="tool-production-en.html">English</a> |
+                    <a href="tool-production-ja.html" class="active-lang">日本語</a>
+                </div>
+                
+                <!-- モバイルメニューボタン -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ 工具製造ページヘッダー ============ -->
+    <section class="production-hero">
+        <div class="container">
+            <!-- パンくずリスト -->
+            <div class="breadcrumb">
+                <a href="../index-ja.html">ホーム</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>工具製造</span>
+            </div>
+            
+            <h1>専門的な工具製造</h1>
+            <p>精密製造技術と先進技術の完璧な融合により、高品質な超硬工具を提供します</p>
+            <a href="#consult-section" class="btn" style="background: white; color: var(--primary-color);">今すぐ相談</a>
+        </div>
+    </section>
+    
+    <!-- ============ 製造工程タイムライン ============ -->
+    <section class="process-timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>製造工程</h2>
+                <p>原材料から完成品まで、すべての工程を厳格に管理し、優れた工具性能を実現します</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>材料選別・検査</h3>
+                        <p>すべての原材料は国内外の信頼できるサプライヤーから調達し、入荷前に厳格な品質検査を実施。PCD/PCBNコンパクトは高精度機器で硬度、密度、内部欠陥を検査し、材料性能が基準を満たしていることを確認します。</p>
+                        <div class="step-image">
+                            <img src="../images/material-check.jpg" alt="材料選別・検査">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>設計最適化・プログラミング</h3>
+                        <p>顧客要件と被削材特性に基づき、CADソフトウェアを使用して工具設計を最適化。経験豊富なエンジニアチームが、工具形状、切れ刃強度、切りくず排出性を最適化します。</p>
+                        <div class="step-image">
+                            <img src="../images/design-process.jpg" alt="設計最適化・プログラミング">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>精密加工・成形</h3>
+                        <p>5軸CNCマシニングセンタ、放電加工機、レーザー切断機などの高精度設備を使用し、ミクロン単位の工具幾何精度を実現。工具本体は高品質超硬合金またはハイス鋼を使用し、熱処理により強度と靭性を向上させます。</p>
+                        <div class="step-image">
+                            <img src="../images/precision-machining.jpg" alt="精密加工・成形">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>溶接・ろう付け</h3>
+                        <p>真空ろう付けまたは高周波溶接技術を使用して、PCD/PCBNチップを工具本体に強固に接合。溶接温度と時間を厳密に制御し、高い接合強度、最小限の熱影響部、チップ損傷を防止します。</p>
+                        <div class="step-image">
+                            <img src="../images/welding-process.jpg" alt="溶接・ろう付け">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">05</div>
+                        <h3>研削・研磨</h3>
+                        <p>輸入高精度CNC研削盤とダイヤモンドホイールを使用して刃先を仕上げ。切れ刃粗さRa≤0.2μmを実現し、鋭い切れ味とスムーズな切りくす排出を確保。最後に表面研磨と防錆処理を施します。</p>
+                        <div class="step-image">
+                            <img src="../images/grinding-process.jpg" alt="研削・研磨">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">06</div>
+                        <h3>品質検査・梱包</h3>
+                        <p>各工具は高精度測定器で総合的に検査。寸法精度、幾何角度、刃先品質などをチェック。合格品は専用パッケージで梱包し、輸送中の損傷を防ぎます。</p>
+                        <div class="step-image">
+                            <img src="../images/quality-check.jpg" alt="品質検査・梱包">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 先進製造設備 ============ -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>先進製造設備</h2>
+                <p>世界トップクラスの生産・検査設備を採用し、安定した信頼性の高い工具性能を実現</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/cnc-machine.jpg" alt="5軸CNCマシニングセンタ">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>5軸CNCマシニングセンタ</h3>
+                        <p>高精度5軸マシニングセンタ、位置決め精度±0.002mm。複雑な工具本体の精密加工に使用。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 制御システム：Fanuc</li>
+                            <li><i class="fas fa-check"></i> 位置決め精度：±0.002mm</li>
+                            <li><i class="fas fa-check"></i> 最高回転数：20,000rpm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/grinding-machine.jpg" alt="CNC研削盤">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>CNC研削盤</h3>
+                        <p>高精度CNC研削盤、ダイヤモンドホイール搭載。PCD/PCBN工具の高精度研削を実現。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 研削精度：±0.005mm</li>
+                            <li><i class="fas fa-check"></i> 表面粗さ：Ra≤0.2μm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/edm-machine.jpg" alt="精密放電加工機">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>精密放電加工機</h3>
+                        <p>日本製精密放電加工機。PCD/PCBN工具の複雑形状加工に最適。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> ブランド：Fanuc</li>
+                            <li><i class="fas fa-check"></i> 加工精度：±0.003mm</li>
+                            <li><i class="fas fa-check"></i> 表面仕上げ：Ra0.4-0.8μm</li>
+                            <li><i class="fas fa-check"></i> 電極消耗：≤0.1%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/welding-machine.jpg" alt="真空ろう付け炉">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>真空ろう付け炉</h3>
+                        <p>高温真空ろう付け設備。PCD/PCBNチップと工具本体の高強度接合を実現し、熱影響を最小化。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> 最高温度：900°C</li>
+                            <li><i class="fas fa-check"></i> 真空度：5×10⁻⁴Pa</li>
+                            <li><i class="fas fa-check"></i> 温度精度：±3°C</li>
+                            <li><i class="fas fa-check"></i> 有効寸法：Φ300×400mm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/measuring-machine.jpg" alt="キーエンス測定器">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>キーエンス測定器</h3>
+                        <p>高精度測定器。工具の寸法、幾何精度を総合的に検査。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> ブランド：KEYENCE</li>
+                            <li><i class="fas fa-check"></i> 測定精度：1.8+3L/1000μm</li>
+                            <li><i class="fas fa-check"></i> 測定範囲：700×1000×600mm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/laser-machine.jpg" alt="ファイバーレーザー切断機">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>ファイバーレーザー切断機</h3>
+                        <p>高出力ファイバーレーザー切断機。PCD/PCBNコンパクトの精密切断に使用。</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> レーザー出力：650W</li>
+                            <li><i class="fas fa-check"></i> 切断精度：±0.01mm</li>
+                            <li><i class="fas fa-check"></i> 切断速度：0-100mm/s</li>
+                            <li><i class="fas fa-check"></i> 制御システム：PC-Based</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 品質管理体制 ============ -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>品質管理体制</h2>
+                <p>ISO9001品質マネジメントシステムを厳格に実施し、すべての工具が最高基準を満たすことを保証</p>
+            </div>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>受入検査</h3>
+                    <p>すべての原材料・部品は入荷前に厳格な検査を実施。材料証明書、硬度試験、寸法測定などにより、源流品質を確保。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>工程管理</h3>
+                    <p>製造工程に複数の品質管理ポイントを設定。各工程完了後に検査を行い、不適合品は次工程に流しません。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>完成品検査</h3>
+                    <p>出荷前に各工具に対して全寸法検査・性能試験を実施。寸法精度、刃先品質などを確認。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>認証制度</h3>
+                    <p>ISO9001認証取得。定期的に第三者審査を受け、品質マネジメントシステムの有効性を維持。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>継続的改善</h3>
+                    <p>品質データ分析システムを構築。品質パフォーマンスを定期的に見直し、継続的改善を実施し、製品品質を向上。</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>顧客フィードバック</h3>
+                    <p>顧客品質フィードバック体制を構築。顧客の品質問題に迅速に対応し、顧客ニーズを品質改善の原動力に。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 生産能力統計 ============ -->
+    <section class="capacity-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>生産能力</h2>
+                <p>先進的な生産設備と専門チームにより、効率的な納品と安定品質を実現</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="200000">200000</div>
+                    <div class="stat-label">年間生産能力（個）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">98</div>
+                    <div class="stat-label">製品合格率（%）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="18">18</div>
+                    <div class="stat-label">製造経験（年）</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">99</div>
+                    <div class="stat-label">顧客満足度（%）</div>
+                </div>
+            </div>
+            
+            <div class="advantages-list">
+                <h3>当社の製造上の優位性</h3>
+                <div class="advantage-point">
+                    <strong>専門技術チーム</strong>：18年以上の工具設計・製造経験を持つ中核技術チームが、お客様に専門的な工具ソリューションを提供します。
+                </div>
+                <div class="advantage-point">
+                    <strong>先進製造設備</strong>：世界トップクラスの生産・検査設備を導入し、製品精度と品質安定性を確保。
+                </div>
+                <div class="advantage-point">
+                    <strong>厳格な品質管理</strong>：原材料から完成品まで全工程の品質管理体制を構築し、すべての工具が最高基準を満たすことを保証。
+                </div>
+                <div class="advantage-point">
+                    <strong>迅速な対応力</strong>：標準品は7-15日で納品、緊急注文は優先対応可能で、お客様の多様なニーズに対応。
+                </div>
+                <div class="advantage-point">
+                    <strong>カスタマイズサービス</strong>：お客様の特定要件に基づき、工具設計、工程最適化など包括的なカスタマイズサービスを提供。
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 相談エリア ============ -->
+    <section class="consult-section" id="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <h3>カスタム工具ソリューションが必要ですか？</h3>
+                <p>当社の技術チームが、お客様の加工ニーズに基づき、専門的な工具設計・製造・技術サポートサービスを提供します。</p>
+                <a href="tel:+8613674260538" class="btn consult-btn">
+                    <i class="fas fa-phone"></i> 今すぐ相談
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ フッター ============ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>天乙刀具</h3>
+                    <p>専門技術と質の高いサービスを通じて、高品質・高精度な工具ソリューションを提供することに注力しています。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>クイックリンク</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index-ja.html">ホーム</a></li>
+                        <li><a href="../index-ja.html#services">サービス</a></li>
+                        <li><a href="../products-ja.html">製品情報</a></li>
+                        <li><a href="../about-ja.html">会社概要</a></li>
+                        <li><a href="../index-ja.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>お問い合わせ</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 大連市経済技術開発区金湾南一路25-1号</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 天乙刀具有限会社 無断転載を禁じます。</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 共有JavaScriptファイル -->
+    <script src="../script.js"></script>
+    
+    <!-- ページ固有JavaScript (数字アニメーション) -->
+    <script>
+        // 数字アニメーション効果
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.getAttribute('data-count').includes('%')) {
+                        stat.textContent = Math.floor(current) + '%';
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+        
+        // 要素がビューポートに入ったらアニメーション開始
+        function initNumberAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const capacitySection = document.querySelector('.capacity-section');
+            if (capacitySection) {
+                observer.observe(capacitySection);
+            }
+        }
+        
+        // ページ読み込み完了後に初期化
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNumberAnimation);
+        } else {
+            initNumberAnimation();
+        }
+    </script>
+</body>
+</html>

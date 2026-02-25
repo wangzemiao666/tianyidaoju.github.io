@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Production丨Dalian Tianyi Cutting Tools Co., Ltd.丨Professional PCD/PCBN Tool Manufacturing</title>
+    
+    <!-- SEO optimization -->
+    <meta name="description" content="Introduction to Dalian Tianyi Cutting Tools' professional PCD and PCBN tool production process, showcasing our production equipment, process flow, and quality control system.">
+    <meta name="keywords" content="tool production, PCD tool production, PCBN tool production, Tianyi tool manufacturing process, superhard tool manufacturing">
+    
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Shared CSS file -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Tool production page specific styles (same as Chinese) -->
+    <style>
+        /* 刀具生产页面头部 */
+        .production-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../images/production-hero.jpg') center/cover;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .production-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .production-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: transparent;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* 生产流程时间线 */
+        .process-timeline {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-step {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .timeline-step:nth-child(odd) {
+            justify-content: flex-start;
+        }
+        
+        .timeline-step:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .step-content {
+            width: 45%;
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-step:nth-child(odd) .step-number {
+            right: -75px;
+        }
+        
+        .timeline-step:nth-child(even) .step-number {
+            left: -75px;
+        }
+        
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .step-image {
+            margin-top: 20px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .step-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .step-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 生产设备网格 */
+        .equipment-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .equipment-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .equipment-image {
+            height: 220px;
+            background-color: #e4edf5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .equipment-content {
+            padding: 25px;
+        }
+        
+        .equipment-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .equipment-specs {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .equipment-specs li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .equipment-specs i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* 质量控制网格 */
+        .quality-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .quality-item {
+            text-align: center;
+            padding: 40px 30px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quality-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+        
+        .quality-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 生产能力统计 */
+        .capacity-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        /* 生产优势 */
+        .advantages-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .advantages-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .advantage-point {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .advantage-point:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .advantage-point strong {
+            color: var(--primary-color);
+        }
+        
+        /* 咨询卡片 */
+        .consult-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .timeline-step:nth-child(odd),
+            .timeline-step:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 60px;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -75px;
+                right: auto;
+            }
+            
+            .production-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .production-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .production-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                width: 90%;
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -55px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .advantages-list {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .production-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .production-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .step-content {
+                width: 85%;
+                margin-left: 40px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .timeline-step:nth-child(odd) .step-number,
+            .timeline-step:nth-child(even) .step-number {
+                left: -45px;
+            }
+            
+            .equipment-grid,
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 语言切换器样式（与首页一致） */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ Header ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="../index-en.html" class="logo">
+                    <img src="../images/logo.png" alt="Tianyi Tools Logo" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- Desktop navigation -->
+                <ul class="nav-links">
+                    <li><a href="../index-en.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="tool-production-en.html" class="dropdown-item active">Tool Production</a>
+                            <a href="tool-sharpening-en.html" class="dropdown-item">Tool Sharpening</a>
+                            <a href="after-sales-en.html" class="dropdown-item">After-sales Service</a>
+                        </div>
+                    </li>
+                    <li><a href="../products-en.html">Products</a></li>
+                    <li><a href="../about-en.html">About Us</a></li>
+                    <li><a href="../index-en.html#contact">Contact</a></li>
+                </ul>
+
+                <!-- Language switcher -->
+                <div class="lang-switcher">
+                    <a href="tool-production.html">中文</a> |
+                    <a href="tool-production-en.html" class="active-lang">English</a> |
+                    <a href="tool-production-ja.html">日本語</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ Tool Production Hero Section ============ -->
+    <section class="production-hero">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index-en.html">Home</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>Tool Production</span>
+            </div>
+            
+            <h1>Professional Tool Production</h1>
+            <p>The perfect combination of precision manufacturing processes and advanced technology, providing you with high-quality superhard tools</p>
+            <a href="#consult-section" class="btn" style="background: white; color: var(--primary-color);">Consult Now</a>
+        </div>
+    </section>
+    
+    <!-- ============ Production Process Timeline ============ -->
+    <section class="process-timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Production Process</h2>
+                <p>From raw materials to finished products, we strictly execute every process to ensure superior tool performance</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>Material Selection & Inspection</h3>
+                        <p>All raw materials come from well-known domestic and international suppliers and undergo strict quality inspection before entering the factory. PCD/PCBN compacts are tested for hardness, density, and internal defects using high-precision instruments to ensure material performance meets standards.</p>
+                        <div class="step-image">
+                            <img src="../images/material-check.jpg" alt="Material Selection & Inspection">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>Design Optimization & Programming</h3>
+                        <p>Based on customer requirements and workpiece material characteristics, tool design is optimized using CAD software. Our engineering team, with years of experience, ensures optimal tool geometry, cutting edge strength, and chip evacuation performance.</p>
+                        <div class="step-image">
+                            <img src="../images/design-process.jpg" alt="Design Optimization & Programming">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>Precision Machining & Forming</h3>
+                        <p>Using high-precision equipment such as 5-axis CNC machining centers, EDM, and laser cutting to ensure tool geometric accuracy down to micron level. The tool body is made of high-quality carbide or high-speed steel, heat-treated to enhance strength and toughness.</p>
+                        <div class="step-image">
+                            <img src="../images/precision-machining.jpg" alt="Precision Machining & Forming">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>Welding & Brazing</h3>
+                        <p>Using vacuum brazing or high-frequency welding technology to firmly bond the PCD/PCBN insert to the tool body. Strict control of welding temperature and time ensures high bond strength, minimal heat-affected zone, and avoids insert damage.</p>
+                        <div class="step-image">
+                            <img src="../images/welding-process.jpg" alt="Welding & Brazing">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">05</div>
+                        <h3>Grinding & Polishing</h3>
+                        <p>Using imported high-precision CNC grinding machines with diamond wheels for edge finishing. Cutting edge roughness Ra ≤ 0.2μm ensures sharp cutting and smooth chip flow. Finally, surface polishing and anti-rust treatment are applied.</p>
+                        <div class="step-image">
+                            <img src="../images/grinding-process.jpg" alt="Grinding & Polishing">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-content">
+                        <div class="step-number">06</div>
+                        <h3>Quality Inspection & Packaging</h3>
+                        <p>Each tool undergoes comprehensive inspection with high-end equipment. Inspection items include dimensional accuracy, geometric angles, and cutting edge quality. Qualified products are packed in special packaging to avoid transportation damage.</p>
+                        <div class="step-image">
+                            <img src="../images/quality-check.jpg" alt="Quality Inspection & Packaging">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Advanced Production Equipment ============ -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advanced Production Equipment</h2>
+                <p>Adopting world-class production and inspection equipment to ensure stable and reliable tool performance</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/cnc-machine.jpg" alt="5-axis CNC Machining Center">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>5-axis CNC Machining Center</h3>
+                        <p>High-end 5-axis machining center with positioning accuracy of ±0.002mm, used for precision machining of complex tool bodies.</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> Control system: Fanuc</li>
+                            <li><i class="fas fa-check"></i> Positioning accuracy: ±0.002mm</li>
+                            <li><i class="fas fa-check"></i> Max speed: 20,000rpm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/grinding-machine.jpg" alt="CNC Grinding Machine">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>CNC Grinding Machine</h3>
+                        <p>High-end CNC grinding machine equipped with diamond wheels for high-precision grinding of PCD/PCBN tools.</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> Grinding accuracy: ±0.005mm</li>
+                            <li><i class="fas fa-check"></i> Surface roughness: Ra≤0.2μm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/edm-machine.jpg" alt="Precision EDM Machine">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Precision EDM Machine</h3>
+                        <p>Japanese imported EDM machine for precision machining of complex profiles on PCD/PCBN tools.</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> Brand: Fanuc</li>
+                            <li><i class="fas fa-check"></i> Machining accuracy: ±0.003mm</li>
+                            <li><i class="fas fa-check"></i> Surface finish: Ra0.4-0.8μm</li>
+                            <li><i class="fas fa-check"></i> Electrode wear: ≤0.1%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/welding-machine.jpg" alt="Vacuum Brazing Furnace">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Vacuum Brazing Furnace</h3>
+                        <p>High-temperature vacuum brazing equipment ensuring high-strength bonding between PCD/PCBN inserts and tool body, minimizing thermal damage.</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> Max temperature: 900°C</li>
+                            <li><i class="fas fa-check"></i> Vacuum degree: 5×10⁻⁴Pa</li>
+                            <li><i class="fas fa-check"></i> Temperature accuracy: ±3°C</li>
+                            <li><i class="fas fa-check"></i> Effective size: Φ300×400mm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/measuring-machine.jpg" alt="KEYENCE Measuring Instrument">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>KEYENCE Measuring Instrument</h3>
+                        <p>High-precision measurement equipment for comprehensive inspection of tool dimensions and geometric accuracy.</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> Brand: KEYENCE</li>
+                            <li><i class="fas fa-check"></i> Measurement accuracy: 1.8+3L/1000μm</li>
+                            <li><i class="fas fa-check"></i> Measurement range: 700×1000×600mm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="../images/laser-machine.jpg" alt="Fiber Laser Cutting Machine">
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Fiber Laser Cutting Machine</h3>
+                        <p>High-power fiber laser cutting equipment for precision cutting of PCD/PCBN compacts.</p>
+                        <ul class="equipment-specs">
+                            <li><i class="fas fa-check"></i> Laser power: 650W</li>
+                            <li><i class="fas fa-check"></i> Cutting accuracy: ±0.01mm</li>
+                            <li><i class="fas fa-check"></i> Cutting speed: 0-100mm/s</li>
+                            <li><i class="fas fa-check"></i> Control system: PC-Based</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Quality Control System ============ -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quality Control System</h2>
+                <p>Strictly implement ISO9001 quality management system to ensure every tool meets the highest standards</p>
+            </div>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Incoming Inspection</h3>
+                    <p>All raw materials and accessories undergo strict inspection before entering the factory, including material certificates, hardness testing, dimensional measurement, ensuring quality at the source.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Process Control</h3>
+                    <p>Multiple quality control points are set up during production. Each process is inspected after completion; non-conforming products never proceed to the next process.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Finished Product Inspection</h3>
+                    <p>Each tool undergoes full dimensional inspection and performance testing before shipment, including dimensional accuracy and cutting edge quality.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification System</h3>
+                    <p>ISO9001 quality management system certified, regularly audited by third parties to ensure the quality management system operates effectively.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Establish quality data statistical analysis system, regularly review quality performance, implement continuous improvement measures to enhance product quality.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <div class="quality-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Customer Feedback</h3>
+                    <p>Establish customer quality feedback mechanism, promptly handle customer quality issues, and turn customer needs into driving force for quality improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Production Capacity Statistics ============ -->
+    <section class="capacity-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Production Capacity</h2>
+                <p>Advanced production facilities and professional team ensure efficient delivery and stable quality</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="200000">200000</div>
+                    <div class="stat-label">Annual production capacity (pcs)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">98</div>
+                    <div class="stat-label">Product pass rate (%)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="18">18</div>
+                    <div class="stat-label">Production experience (years)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">99</div>
+                    <div class="stat-label">Customer satisfaction (%)</div>
+                </div>
+            </div>
+            
+            <div class="advantages-list">
+                <h3>Our Production Advantages</h3>
+                <div class="advantage-point">
+                    <strong>Professional Technical Team</strong>: Core technical team with over 18 years of experience in tool design and manufacturing, providing professional tooling solutions for customers.
+                </div>
+                <div class="advantage-point">
+                    <strong>Advanced Production Equipment</strong>: Introducing world-class production and inspection equipment to ensure product accuracy and quality stability.
+                </div>
+                <div class="advantage-point">
+                    <strong>Strict Quality Control</strong>: Establish a full-process quality control system from raw materials to finished products, ensuring every tool meets the highest standards.
+                </div>
+                <div class="advantage-point">
+                    <strong>Quick Response Capability</strong>: Standard products delivered in 7-15 days, emergency orders can be expedited to meet different customer needs.
+                </div>
+                <div class="advantage-point">
+                    <strong>Customization Service</strong>: Provide comprehensive customization services including tool design and process optimization based on specific customer requirements.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Consultation Section ============ -->
+    <section class="consult-section" id="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <h3>Need Custom Tooling Solutions?</h3>
+                <p>Our technical team will provide professional tool design, manufacturing, and technical support services based on your processing needs.</p>
+                <a href="tel:+8613674260538" class="btn consult-btn">
+                    <i class="fas fa-phone"></i> Consult Now
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ Footer ============ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tianyi Tools</h3>
+                    <p>We are committed to providing high-quality, high-precision tooling solutions through professional technology and excellent service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index-en.html">Home</a></li>
+                        <li><a href="../index-en.html#services">Services</a></li>
+                        <li><a href="../products-en.html">Products</a></li>
+                        <li><a href="../about-en.html">About Us</a></li>
+                        <li><a href="../index-en.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> No. 25-1, Jinwannan First Road, Economic and Technological Development Zone, Dalian, China</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Tianyi Cutting Tools Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Shared JavaScript file -->
+    <script src="../script.js"></script>
+    
+    <!-- Page specific JavaScript -->
+    <script>
+        // Number animation effect
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.getAttribute('data-count').includes('%')) {
+                        stat.textContent = Math.floor(current) + '%';
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+        
+        // Trigger animation when element enters viewport
+        function initNumberAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const capacitySection = document.querySelector('.capacity-section');
+            if (capacitySection) {
+                observer.observe(capacitySection);
+            }
+        }
+        
+        // Initialize number animation after page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNumberAnimation);
+        } else {
+            initNumberAnimation();
+        }
+    </script>
+</body>
+</html>

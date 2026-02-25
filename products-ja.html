@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品情報 - 大連天乙刀具有限会社丨切削工具業界のリーダー</title>
+
+    <!-- SEO最適化 -->
+    <meta name="description" content="大連天乙刀具はPCD工具、PCBN工具、各種カスタム工具を専門に製造しています">
+    <meta name="keywords" content="PCD工具, PCBN工具, カスタム工具, ダイヤモンド工具, 立方晶窒化ホウ素工具">
+
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 共有CSSファイル -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 製品ページ固有スタイル (中国語版と同一) -->
+    <style>
+        /* 製品ページ固有スタイル (中国語版と同じ) */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/products-banner.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            margin-bottom: 50px;
+        }
+
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 10px;
+        }
+
+        /* 製品カテゴリーナビ */
+        .category-nav {
+            background-color: white;
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            position: sticky;
+            top: 70px;
+            z-index: 99;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-btn:hover {
+            background-color: rgba(26, 115, 232, 0.1);
+            color: var(--primary-color);
+        }
+
+        .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .category-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* 製品詳細表示エリア */
+        .product-detail-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .product-category-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .product-category-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .product-category-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .product-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .product-variants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .variant-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .variant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .variant-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .variant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .variant-card:hover .variant-image img {
+            transform: scale(1.05);
+        }
+
+        .variant-content {
+            padding: 25px;
+        }
+
+        .variant-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .variant-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .variant-specs {
+            margin-top: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .spec-name {
+            color: var(--text-light);
+        }
+
+        .spec-value {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* 技術パラメータ表 */
+        .tech-specs {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .spec-table th,
+        .spec-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .spec-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .spec-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* 応用分野 */
+        .applications {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .application-card {
+            text-align: center;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .application-card:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .application-card:hover h3,
+        .application-card:hover p {
+            color: white;
+        }
+
+        .application-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .application-card:hover .application-icon {
+            color: white;
+        }
+
+        .application-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .application-card p {
+            color: var(--text-light);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* 製品比較 */
+        .comparison {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .comparison-table {
+            overflow-x: auto;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 992px) {
+            .product-variants {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .category-nav {
+                padding: 20px 0;
+            }
+
+            .category-list {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+
+            .category-btn {
+                white-space: nowrap;
+            }
+
+            .product-variants {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 60px;
+            }
+
+            .product-category-title h2 {
+                font-size: 2rem;
+            }
+
+            .spec-table {
+                font-size: 0.9rem;
+            }
+
+            .spec-table th,
+            .spec-table td {
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .applications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ 選定ヘルプ部分スタイル ============ */
+        .selection-help {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e4edf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .selection-help::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,30 Q50,10 70,30 T90,30 L90,70 Q70,90 50,70 T30,70 Z" fill="%23246beb" opacity="0.1"/></svg>');
+            background-size: contain;
+            opacity: 0.3;
+        }
+
+        .selection-help::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23246beb" opacity="0.1"/></svg>');
+            background-size: contain;
+            opacity: 0.2;
+        }
+
+        .help-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .help-content {
+            padding-right: 20px;
+        }
+
+        .help-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        }
+
+        .help-badge i {
+            margin-right: 8px;
+        }
+
+        .help-content h2 {
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .help-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .help-features {
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .help-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-help {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn-help:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 115, 232, 0.4);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .btn-outline-help {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-help:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-help i,
+        .btn-outline-help i {
+            margin-right: 8px;
+        }
+
+        /* エキスパートカード */
+        .help-experts {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .expert-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .expert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .expert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .expert-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #f0f7ff;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .expert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .expert-info h4 {
+            font-size: 1.4rem;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .expert-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .expert-experience {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .expert-specialties {
+            margin-bottom: 25px;
+        }
+
+        .expert-specialties h5 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .specialty-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .specialty-tags span {
+            background: #f0f7ff;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .specialty-tags span:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .expert-contact {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .expert-note {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.1);
+            border-left: 4px solid #ff9800;
+        }
+
+        .note-icon {
+            width: 50px;
+            height: 50px;
+            background: #ff9800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .note-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .expert-note p {
+            color: #5d4037;
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .expert-note strong {
+            color: #e65100;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 992px) {
+            .help-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .help-content {
+                padding-right: 0;
+            }
+
+            .help-content h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .selection-help {
+                padding: 80px 0;
+            }
+
+            .help-content h2 {
+                font-size: 2rem;
+            }
+
+            .help-cta {
+                flex-direction: column;
+            }
+
+            .btn-help,
+            .btn-outline-help {
+                width: 100%;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+
+            .expert-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .expert-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .expert-note {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .note-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .selection-help {
+                padding: 60px 0;
+            }
+
+            .help-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .feature-icon {
+                margin-bottom: 10px;
+            }
+
+            .specialty-tags {
+                justify-content: center;
+            }
+        }
+
+        /* 言語切替スタイル (トップページと統一) */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============ ヘッダー ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- ロゴ -->
+                <a href="index-ja.html" class="logo">
+                    <img src="images/logo.png" alt="天乙刀具 ロゴ" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+
+                <!-- デスクトップナビ -->
+                <ul class="nav-links">
+                    <li><a href="index-ja.html">ホーム</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            サービス <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="pages/tool-production-ja.html" class="dropdown-item">工具製造</a>
+                            <a href="pages/tool-sharpening-ja.html" class="dropdown-item">工具再研磨</a>
+                            <a href="pages/after-sales-ja.html" class="dropdown-item">アフターサービス</a>
+                        </div>
+                    </li>
+                    <li><a href="products-ja.html" class="active">製品情報</a></li>
+                    <li><a href="about-ja.html">会社概要</a></li>
+                    <li><a href="index-ja.html#contact">お問い合わせ</a></li>
+                </ul>
+
+                <!-- 言語切替 -->
+                <div class="lang-switcher">
+                    <a href="products.html">中文</a> |
+                    <a href="products-en.html">English</a> |
+                    <a href="products-ja.html" class="active-lang">日本語</a>
+                </div>
+                
+                <!-- モバイルメニューボタン -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ ページヘッダー ============ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>製品情報</h1>
+            <p>専門的な製造、卓越した品質 - 切削工具業界のリーダー</p>
+        </div>
+    </section>
+
+    <!-- ============ パンくずリスト ============ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index-ja.html">ホーム</a>
+            <span>/</span>
+            <span>製品情報</span>
+        </div>
+    </div>
+
+    <!-- ============ カテゴリーナビ ============ -->
+    <section class="category-nav">
+        <div class="container">
+            <div class="category-list">
+                <button class="category-btn active" data-category="pcd">
+                    <i class="fas fa-gem"></i> PCD工具
+                </button>
+                <button class="category-btn" data-category="cbn">
+                    <i class="fas fa-atom"></i> PCBN工具
+                </button>
+                <button class="category-btn" data-category="custom">
+                    <i class="fas fa-cogs"></i> カスタム工具
+                </button>
+                <button class="category-btn" data-category="material">
+                    <i class="fas fa-weight"></i> 材料選定
+                </button>
+                <button class="category-btn" data-category="application">
+                    <i class="fas fa-industry"></i> 応用分野
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PCD工具詳細 ============ -->
+    <section id="pcd" class="product-detail-section active-category">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>PCD工具</h2>
+                <p>多結晶ダイヤモンド工具、非鉄金属・非金属材料の精密加工に最適</p>
+            </div>
+
+            <div class="product-variants">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <!-- カルーセル -->
+                        <div class="image-carousel" data-carousel-id="pcd-1">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active">
+                                    <img src="images/pcd-1-1.jpg" alt="PCDチップ 角度1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/pcd-1-2.jpg" alt="PCDチップ 角度2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev-btn" aria-label="前へ"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn" aria-label="次へ"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0" role="button" aria-label="画像1"></span>
+                                <span class="indicator" data-index="1" role="button" aria-label="画像2"></span>
+                            </div>
+                            <div class="image-counter" aria-live="polite" aria-atomic="true">
+                                <span class="current-index">1</span> / <span class="total-images">2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCDチップ</h3>
+                        <p class="variant-description">アルミ合金、銅合金などの非鉄金属の精密旋削加工用。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">適用材料</span><span class="spec-value">アルミ合金、銅合金</span></div>
+                            <div class="spec-item"><span class="spec-name">加工精度</span><span class="spec-value">±0.05mm</span></div>
+                            <div class="spec-item"><span class="spec-name">使用寿命</span><span class="spec-value">超硬合金の50-100倍</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="pcd-2">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/pcd-2-1.jpg" alt="PCDバイト 角度1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/pcd-2-2.jpg" alt="PCDバイト 角度2" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/pcd-2-3.jpg" alt="PCDバイト 角度3" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                            </div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">3</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCDバイト</h3>
+                        <p class="variant-description">非鉄金属・非金属材料の精密旋削加工用。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">適用材料</span><span class="spec-value">アルミ合金、複合材料</span></div>
+                            <div class="spec-item"><span class="spec-name">加工精度</span><span class="spec-value">±0.02mm</span></div>
+                            <div class="spec-item"><span class="spec-name">表面粗さ</span><span class="spec-value">Ra0.1-0.4μm</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="pcd-3">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/pcd-3-1.jpg" alt="PCD穴加工・リーマ工具1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/pcd-3-2.jpg" alt="PCD穴加工・リーマ工具2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                            </div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCD穴加工・リーマ工具</h3>
+                        <p class="variant-description">高ケイ素アルミ合金など難削材の精密穴加工用。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">適用材料</span><span class="spec-value">高ケイ素アルミ</span></div>
+                            <div class="spec-item"><span class="spec-name">穴径範囲</span><span class="spec-value">Φ2-20mm</span></div>
+                            <div class="spec-item"><span class="spec-name">深さ径比</span><span class="spec-value">≤5:1</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技術パラメータ表 -->
+            <div class="tech-specs">
+                <div class="section-title">
+                    <h2>PCD工具技術パラメータ</h2>
+                    <p>詳細な技術仕様と性能指標</p>
+                </div>
+
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>パラメータ</th><th>値</th><th>説明</th></tr></thead>
+                        <tbody>
+                            <tr><td>ダイヤモンド粒度</td><td>2-50μm</td><td>加工要求に応じて選択可能</td></tr>
+                            <tr><td>硬度</td><td>8000-9000 HV</td><td>超硬工具よりはるかに高い</td></tr>
+                            <tr><td>耐摩耗性</td><td>超硬合金の50-100倍</td><td>工具寿命が大幅に向上</td></tr>
+                            <tr><td>熱伝導率</td><td>500-700 W/m·K</td><td>良好な放熱性</td></tr>
+                            <tr><td>使用温度</td><td>≤700℃</td><td>高温で安定した性能</td></tr>
+                            <tr><td>加工表面粗さ</td><td>Ra0.1-0.4μm</td><td>優れた表面品質が得られる</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PCBN工具詳細 ============ -->
+    <section id="cbn" class="product-detail-section">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>PCBN工具</h2>
+                <p>立方晶窒化ホウ素工具、焼入れ鋼・鋳鉄などの難削材加工に最適</p>
+            </div>
+
+            <div class="product-variants">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="cbn-1">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/cbn-1-1.jpg" alt="PCBN溝加工工具1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-1-2.jpg" alt="PCBN溝加工工具2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCBN溝加工工具</h3>
+                        <p class="variant-description">焼入れ鋼、鋳鉄などの難削材の精密溝加工用。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">適用材料</span><span class="spec-value">焼入れ鋼、鋳鉄</span></div>
+                            <div class="spec-item"><span class="spec-name">硬度範囲</span><span class="spec-value">45-65 HRC</span></div>
+                            <div class="spec-item"><span class="spec-name">耐熱性</span><span class="spec-value">最大1400℃</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="cbn-2">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/cbn-2-1.jpg" alt="PCBNチップ1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-2-2.jpg" alt="PCBNチップ2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCBNチップ</h3>
+                        <p class="variant-description">難削材、焼入れ鋼、鋳鉄の精密旋削加工用。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">適用材料</span><span class="spec-value">高温合金、硬質合金</span></div>
+                            <div class="spec-item"><span class="spec-name">切削速度</span><span class="spec-value">100-300 m/min</span></div>
+                            <div class="spec-item"><span class="spec-name">送り量</span><span class="spec-value">0.05-0.3 mm/刃</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="cbn-3">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/cbn-3-1.jpg" alt="PCBN穴加工・リーマ工具1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-3-2.jpg" alt="PCBN穴加工・リーマ工具2" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/cbn-3-3.jpg" alt="PCBN穴加工・リーマ工具3" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">3</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">PCBN穴加工・リーマ工具</h3>
+                        <p class="variant-description">高硬度材料の精密穴加工・リーマ加工用。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">適用材料</span><span class="spec-value">焼入れ鋼、鋳鉄</span></div>
+                            <div class="spec-item"><span class="spec-name">穴径範囲</span><span class="spec-value">Φ10-100mm</span></div>
+                            <div class="spec-item"><span class="spec-name">加工精度</span><span class="spec-value">IT6-IT7</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技術パラメータ表 -->
+            <div class="tech-specs">
+                <div class="section-title">
+                    <h2>PCBN工具技術パラメータ</h2>
+                    <p>詳細な技術仕様と性能指標</p>
+                </div>
+
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>パラメータ</th><th>値</th><th>説明</th></tr></thead>
+                        <tbody>
+                            <tr><td>CBN含有量</td><td>50-95%</td><td>加工要求に応じて選択可能</td></tr>
+                            <tr><td>硬度</td><td>3000-5000 HV</td><td>ダイヤモンドに次ぐ硬度</td></tr>
+                            <tr><td>耐熱性</td><td>1400℃</td><td>高温下でも高硬度を維持</td></tr>
+                            <tr><td>耐摩耗性</td><td>超硬合金の30-50倍</td><td>難削材加工に適する</td></tr>
+                            <tr><td>熱伝導率</td><td>100-130 W/m·K</td><td>良好な放熱性</td></tr>
+                            <tr><td>化学的安定性</td><td>優良</td><td>鉄族元素と反応しない</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ カスタム工具詳細 ============ -->
+    <section id="custom" class="product-detail-section">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>カスタム工具</h2>
+                <p>お客様の特定ニーズに合わせた専用工具ソリューション</p>
+            </div>
+
+            <div class="product-variants">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="custom-1">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/custom-1-1.jpg" alt="カスタム工具1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-1-2.jpg" alt="カスタム工具2" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-1-3.jpg" alt="カスタム工具3" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">3</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">非標準工具</h3>
+                        <p class="variant-description">お客様の図面・技術要求に基づき、特殊形状・サイズの工具を製作。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">カスタム範囲</span><span class="spec-value">形状、寸法、材料</span></div>
+                            <div class="spec-item"><span class="spec-name">納期</span><span class="spec-value">10-20日</span></div>
+                            <div class="spec-item"><span class="spec-name">最小ロット</span><span class="spec-value">図面による</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="custom-2">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/custom-2-1.jpg" alt="フライスアーバ1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-2-2.jpg" alt="フライスアーバ2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">フライスアーバ</h3>
+                        <p class="variant-description">複雑形状・高精度フライス加工用のアーバ。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">機能組合せ</span><span class="spec-value">フライス加工</span></div>
+                            <div class="spec-item"><span class="spec-name">加工効率</span><span class="spec-value">30-50%向上</span></div>
+                            <div class="spec-item"><span class="spec-name">適応工作機械</span><span class="spec-value">マシニングセンタ、旋削複合機</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <div class="image-carousel" data-carousel-id="custom-3">
+                            <div class="carousel-images">
+                                <div class="carousel-slide active"><img src="images/custom-3-1.jpg" alt="特殊コーティング工具1" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="images/custom-3-2.jpg" alt="特殊コーティング工具2" loading="lazy"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span></div>
+                            <div class="image-counter"><span class="current-index">1</span> / <span class="total-images">2</span></div>
+                        </div>
+                    </div>
+                    <div class="variant-content">
+                        <h3 class="variant-title">特殊コーティング工具</h3>
+                        <p class="variant-description">加工材料に応じた特殊コーティングを施した工具。</p>
+                        <div class="variant-specs">
+                            <div class="spec-item"><span class="spec-name">コーティング種類</span><span class="spec-value">TiN, TiCN, TiAlNなど</span></div>
+                            <div class="spec-item"><span class="spec-name">コーティング厚</span><span class="spec-value">2-5μm</span></div>
+                            <div class="spec-item"><span class="spec-name">使用寿命</span><span class="spec-value">3-5倍向上</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- カスタム手順 -->
+            <div class="applications">
+                <div class="section-title">
+                    <h2>カスタム手順</h2>
+                    <p>ご要望から納品までの完全なサービスフロー</p>
+                </div>
+
+                <div class="applications-grid">
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-comments"></i></div><h3>ヒアリング</h3><p>お客様の加工ニーズ・技術要件を詳細に把握</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-pencil-ruler"></i></div><h3>設計</h3><p>工具形状設計、材料・コーティング選定</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-hammer"></i></div><h3>サンプル製作</h3><p>サンプル製作、テスト検証</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-shipping-fast"></i></div><h3>量産</h3><p>サンプル承認後、量産・納品</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 材料選定ガイド ============ -->
+    <section id="material" class="product-detail-section">
+        <div class="container">
+            <div class="product-category-title">
+                <h2>材料選定ガイド</h2>
+                <p>加工材料に応じた最適な工具材料・タイプの選定</p>
+            </div>
+
+            <!-- 材料選定表 -->
+            <div class="tech-specs">
+                <div class="section-title"><h3>材料選定対照表</h3><p>加工材料別の推奨工具タイプとパラメータ</p></div>
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>加工材料カテゴリ</th><th>具体例</th><th>推奨工具タイプ</th><th>推奨工具材料</th><th>切削速度範囲</th><th>送り量範囲</th></tr></thead>
+                        <tbody>
+                            <tr><td>非鉄金属</td><td>アルミ合金、銅合金、マグネシウム合金</td><td>PCDフライス、バイト</td><td>PCD</td><td>300-800 m/min</td><td>0.1-0.4 mm/刃</td></tr>
+                            <tr><td>鋳鉄</td><td>ねずみ鋳鉄、ダクタイル鋳鉄</td><td>PCBNバイト、フライス</td><td>PCBN</td><td>100-300 m/min</td><td>0.1-0.3 mm/刃</td></tr>
+                            <tr><td>焼入れ鋼</td><td>45-65HRC焼入れ鋼</td><td>PCBNバイト、フライス</td><td>PCBN（高CBN含有）</td><td>80-200 m/min</td><td>0.05-0.2 mm/刃</td></tr>
+                            <tr><td>高温合金</td><td>インコネル、チタン合金</td><td>PCBN工具</td><td>PCBN</td><td>50-120 m/min</td><td>0.05-0.15 mm/刃</td></tr>
+                            <tr><td>複合材料</td><td>炭素繊維、ガラス繊維</td><td>PCDフライス、ドリル</td><td>PCD（微粒）</td><td>200-500 m/min</td><td>0.05-0.2 mm/刃</td></tr>
+                            <tr><td>粉末冶金</td><td>鉄系、銅系粉末冶金</td><td>PCBN工具</td><td>PCBN</td><td>60-150 m/min</td><td>0.08-0.2 mm/刃</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 選定原則 -->
+            <div class="applications" style="margin-top: 50px;">
+                <div class="section-title"><h3>工具選定ガイドライン</h3><p>加工条件に応じた適切な工具選定</p></div>
+                <div class="applications-grid">
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-balance-scale"></i></div><h3>硬度マッチング</h3><p>工具硬度は被削材硬度の2-3倍以上。PCDは非鉄金属、PCBNは焼入れ鋼・鋳鉄に適用。</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-thermometer-half"></i></div><h3>耐熱性</h3><p>高温加工にはPCBN。PCDの使用温度は700℃以下。</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-exchange-alt"></i></div><h3>化学的安定性</h3><p>工具と被削材の反応を回避。PCBNは鉄族元素と反応せず、鋼材加工に適す。</p></div>
+                    <div class="application-card"><div class="application-icon"><i class="fas fa-dollar-sign"></i></div><h3>経済性</h3><p>工具コスト、加工効率、寿命を総合的に判断。長期加工にはPCD/PCBN推奨。</p></div>
+                </div>
+            </div>
+
+            <!-- 切削パラメータ -->
+            <div class="tech-specs" style="margin-top: 50px;">
+                <div class="section-title"><h3>切削パラメータ選定ガイド</h3><p>工具材料別の推奨切削パラメータ</p></div>
+                <div class="spec-table-container">
+                    <table class="spec-table">
+                        <thead><tr><th>工具材料</th><th>適用材料硬度</th><th>推奨切削速度</th><th>推奨送り量</th><th>切り込み深さ</th><th>冷却方式</th></tr></thead>
+                        <tbody>
+                            <tr><td>PCD工具</td><td>非鉄金属 &lt; 300HB</td><td>300-1000 m/min</td><td>0.05-0.4 mm/刃</td><td>0.1-3 mm</td><td>乾式または微量潤滑</td></tr>
+                            <tr><td>PCBN工具</td><td>45-65 HRC</td><td>80-300 m/min</td><td>0.05-0.3 mm/刃</td><td>0.1-2 mm</td><td>クーラント推奨</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 工具摩耗と寿命管理 -->
+            <div class="faq-section" style="margin-top: 50px;">
+                <div class="section-title"><h3>工具摩耗と寿命管理</h3><p>工具摩耗の判断と寿命予測</p></div>
+                <div class="faq-list">
+                    <div class="faq-item"><div class="faq-question"><h3>PCD工具の再研磨時期は？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>以下の場合、再研磨が必要：</p><ul><li>逃げ面摩耗幅VBが0.2mm超</li><li>切削力が著しく増大、消費電力20%以上増加</li><li>加工面粗さRaが工程要求値を超える</li><li>顕著なチッピング・クラック発生</li><li>加工寸法精度が公差外となる</li></ul></div></div>
+                    <div class="faq-item"><div class="faq-question"><h3>PCBN工具の寿命に影響する要因は？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>主な要因：</p><ul><li><strong>被削材硬度：</strong>高いほど摩耗促進</li><li><strong>CBN含有量：</strong>高いほど耐摩耗性向上</li><li><strong>切削パラメータ：</strong>過大な速度・送り・切込みは寿命短縮</li><li><strong>冷却条件：</strong>適切な冷却で寿命延長</li><li><strong>機械剛性：</strong>振動・衝撃は摩耗促進</li><li><strong>工具形状：</strong>適切な刃先処理で寿命向上</li></ul></div></div>
+                    <div class="faq-item"><div class="faq-question"><h3>超硬工具の寿命を延ばすには？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>方法：</p><ul><li>被削材に適合した工具材料・グレード選択</li><li>切削パラメータ最適化（過大・過小回避）</li><li>適切なクーラント・冷却方式の使用</li><li>機械剛性確保、振動低減</li><li>定期的な摩耗確認、再研磨</li><li>適切な工具角度・刃先処理</li><li>被削材の安定化（硬質介在物回避）</li></ul></div></div>
+                </div>
+            </div>
+
+            <!-- 選定ヘルプ -->
+            <section class="selection-help">
+                <div class="container">
+                    <div class="help-container">
+                        <div class="help-content">
+                            <div class="help-badge"><span><i class="fas fa-star"></i> 専門サービス</span></div>
+                            <h2>選定にお困りですか？</h2>
+                            <p class="help-subtitle">技術専門家チームがいつでもプロフェッショナルな工具選定アドバイスをご提供します</p>
+                            <div class="help-features">
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>迅速な対応</h4><p>24時間以内に専門的な選定提案</p></div></div>
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>無料テスト</h4><p>工具サンプルの無償テスト提供</p></div></div>
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>専門コンサル</h4><p>25年以上の経験を持つ技術専門家</p></div></div>
+                                <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><div class="feature-text"><h4>オンサイト支援</h4><p>技術者が訪問し工程最適化を指導</p></div></div>
+                            </div>
+                            <div class="help-cta">
+                                <a href="index-ja.html#contact" class="btn btn-help"><i class="fas fa-headset"></i> 専門家に相談する</a>
+                                <a href="tel:+8613998631489" class="btn btn-outline-help"><i class="fas fa-phone-alt"></i> 電話する</a>
+                            </div>
+                        </div>
+                        <div class="help-experts">
+                            <div class="expert-card">
+                                <div class="expert-header">
+                                    <div class="expert-image"><img src="images/expert-1.jpg" alt="技術専門家"></div>
+                                    <div class="expert-info"><h4>王 氏</h4><p class="expert-title">技術ディレクター</p><p class="expert-experience">工具業界歴25年</p></div>
+                                </div>
+                                <div class="expert-specialties"><h5>専門分野</h5><div class="specialty-tags"><span>PCD工具設計</span><span>PCBN工具応用</span><span>工程最適化</span></div></div>
+                                <div class="expert-contact"><div class="contact-item"><i class="fas fa-phone"></i><span>+86 13998631489</span></div><div class="contact-item"><i class="fas fa-envelope"></i><span>wangyuansheng73@163.com</span></div></div>
+                            </div>
+                            <div class="expert-note"><div class="note-icon"><i class="fas fa-lightbulb"></i></div><p>お約束：<strong>無料</strong>で工具選定相談と工程最適化アドバイスを提供します</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- ============ 応用分野 ============ -->
+    <section id="application" class="applications">
+        <div class="container">
+            <div class="section-title">
+                <h2>応用分野</h2>
+                <p>当社の工具は様々な産業分野で広く使用されています</p>
+            </div>
+            <div class="applications-grid">
+                <div class="application-card"><div class="application-icon"><i class="fas fa-car"></i></div><h3>自動車製造</h3><p>エンジン部品、変速機、ブレーキシステムなど</p></div>
+                <div class="application-card"><div class="application-icon"><i class="fas fa-plane"></i></div><h3>航空宇宙</h3><p>航空機エンジン、着陸装置、構造部品</p></div>
+                <div class="application-card"><div class="application-icon"><i class="fas fa-cogs"></i></div><h3>精密機械</h3><p>金型、精密部品、医療機器</p></div>
+                <div class="application-card"><div class="application-icon"><i class="fas fa-microchip"></i></div><h3>電子電機</h3><p>半導体、コネクタ、ヒートシンク</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>よくある質問</h2>
+                <p>工具選定・使用・メンテナンスに関するよくある質問</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question"><h3>適切なPCD粒度の選び方は？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>PCD粒度は加工材料と表面品質要求に依存。粗粒(10-50μm)は粗加工・断続切削に適し耐摩耗性が高い。微粒(2-10μm)は仕上げ加工に適し良好な表面品質を得られる。</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>PCBN工具はどのような材料に適していますか？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>PCBN工具は主に硬度45HRC以上の焼入れ鋼、鋳鉄、高温合金、硬質合金などの難削材加工に適しています。</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>カスタム工具の納期は？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>納期は工具の複雑さ・数量によります。単純な非標準工具は通常10-20日、複雑な複合工具は15-30日。緊急の場合は優先対応可能。</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>工具寿命を延ばすには？</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div>
+                    <div class="faq-answer"><p>適切な切削パラメータ選択、適切なクーラント使用、定期的な摩耗確認と再研磨、機械精度・剛性の維持が重要です。</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ フッター ============ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>天乙刀具</h3>
+                    <p>専門技術と質の高いサービスを通じて、高品質・高精度な工具ソリューションを提供することに注力しています。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>クイックリンク</h3>
+                    <ul class="footer-links">
+                        <li><a href="index-ja.html">ホーム</a></li>
+                        <li><a href="index-ja.html#services">サービス</a></li>
+                        <li><a href="products-ja.html">製品情報</a></li>
+                        <li><a href="about-ja.html">会社概要</a></li>
+                        <li><a href="index-ja.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>お問い合わせ</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 大連市経済技術開発区金湾南一路25-1号</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 天乙刀具有限会社 無断転載を禁じます。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 共有JavaScriptファイル -->
+    <script src="script.js"></script>
+
+    <!-- 製品ページ固有スクリプト (中国語版と同一) -->
+    <script>
+        // 製品ページ固有スクリプト
+        document.addEventListener('DOMContentLoaded', function () {
+            // 製品カテゴリ切替
+            const categoryBtns = document.querySelectorAll('.category-btn');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    console.log('Clicked category:', category);
+
+                    // ボタン状態更新
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // 1. 全製品詳細セクションを非表示
+                    const productSections = document.querySelectorAll('.product-detail-section');
+                    productSections.forEach(section => {
+                        section.style.display = 'none';
+                        console.log('Hidden:', section.id);
+                    });
+
+                    // 2. 応用分野セクションを非表示（存在する場合）
+                    const appSection = document.getElementById('application');
+                    if (appSection) {
+                        appSection.style.display = 'none';
+                        console.log('Hidden application');
+                    }
+
+                    // 3. 選択された部分を表示
+                    if (category === 'application') {
+                        if (appSection) {
+                            appSection.style.display = 'block';
+                            console.log('Display application');
+                            appSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    } else {
+                        const targetSection = document.getElementById(category);
+                        if (targetSection) {
+                            targetSection.style.display = 'block';
+                            console.log('Display:', category);
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // 初期状態：PCD工具のみ表示
+            document.getElementById('pcd').style.display = 'block';
+
+            // 他セクションを非表示
+            const otherSections = document.querySelectorAll('#cbn, #custom, #material');
+            otherSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const appSection = document.getElementById('application');
+            if (appSection) {
+                appSection.style.display = 'none';
+            }
+
+            // FAQ開閉
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', function () {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 画像遅延ロード
+            const images = document.querySelectorAll('.variant-image img');
+
+            if (images.length > 0) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.getAttribute('data-src');
+
+                            if (src) {
+                                img.setAttribute('src', src);
+                                img.removeAttribute('data-src');
+                            }
+
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                }, { rootMargin: '100px' });
+
+                images.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+
+            // ページロードアニメ
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.3s ease';
+            }, 100);
+
+            // テーブルレスポンシブ処理
+            const tables = document.querySelectorAll('.spec-table');
+            if (tables.length > 0) {
+                tables.forEach(table => {
+                    if (!table.parentNode.classList.contains('table-container')) {
+                        const container = document.createElement('div');
+                        container.className = 'table-container';
+                        container.style.overflowX = 'auto';
+                        container.style.marginBottom = '20px';
+
+                        table.parentNode.insertBefore(container, table);
+                        container.appendChild(table);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

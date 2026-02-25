@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 - 大連天乙刀具有限会社丨切削工具業界のリーダー</title>
+    
+    <!-- SEO最適化 -->
+    <meta name="description" content="大連天乙刀具有限会社の沿革、企業文化、経営理念をご紹介します。">
+    <meta name="keywords" content="切削工具, 天乙について, 会社沿革, 企業文化, 工具メーカー">
+    
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 共有CSSファイル -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 会社概要ページ固有スタイル -->
+    <style>
+        /* 元の中文ページと同じスタイル */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/about-banner.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            margin-bottom: 50px;
+        }
+        
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 10px;
+        }
+        
+        .about-detail {
+            padding: 80px 0;
+        }
+        
+        .about-mission {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mission-card {
+            background: white;
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .mission-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .timeline {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 5%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 5%;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 30px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -60px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -60px;
+        }
+        
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .team {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 25px 20px;
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .member-position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .values {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .contact-info {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-top: 20px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        
+        /* レスポンシブ調整 */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-container::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 50px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+                right: auto !important;
+            }
+        }
+        
+        /* 言語切替スタイル（トップページと同じ） */
+        .lang-switcher {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .lang-switcher a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+        .lang-switcher a:hover {
+            color: #007bff;
+        }
+        .lang-switcher a.active-lang {
+            font-weight: 600;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ ヘッダー ============ -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <!-- ロゴ -->
+                <a href="index-ja.html" class="logo">
+                    <img src="images/logo.png" alt="天乙刀具 ロゴ" class="logo-img">
+                    <span>天乙刀具</span>
+                </a>
+                
+                <!-- デスクトップナビ -->
+                <ul class="nav-links">
+                    <li><a href="index-ja.html">ホーム</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            サービス <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="pages/tool-production-ja.html" class="dropdown-item">工具製造</a>
+                            <a href="pages/tool-sharpening-ja.html" class="dropdown-item">工具再研磨</a>
+                            <a href="pages/after-sales-ja.html" class="dropdown-item">アフターサービス</a>
+                        </div>
+                    </li>
+                    <li><a href="products-ja.html">製品情報</a></li>
+                    <li><a href="about-ja.html" class="active">会社概要</a></li>
+                    <li><a href="index-ja.html#contact">お問い合わせ</a></li>
+                </ul>
+
+                <!-- 言語切替 -->
+                <div class="lang-switcher">
+                    <a href="about.html">中文</a> |
+                    <a href="about-en.html">English</a> |
+                    <a href="about-ja.html" class="active-lang">日本語</a>
+                </div>
+                
+                <!-- モバイルメニューボタン -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ ページヘッダー ============ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>天乙刀具について</h1>
+            <p>専門的な製造、卓越した品質 - 切削工具業界のリーダー</p>
+        </div>
+    </section>
+    
+    <!-- ============ パンくずリスト ============ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index-ja.html">ホーム</a>
+            <span>/</span>
+            <span>会社概要</span>
+        </div>
+    </div>
+    
+    <!-- ============ 会社詳細 ============ -->
+    <section class="about-detail">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>切削工具業界のリーダー</h2>
+                    <p>大連天乙刀具有限会社は、海と山に囲まれ交通の便が良い港湾都市・大連に位置し、超硬工具分野に特化し、ダイヤモンド（PCD）工具および立方晶窒化ホウ素（PCBN）工具を製造しています。2009年の設立以来、安定した生産体制を築き、ISO9001認証を取得。信頼性の高い品質でお客様から高い評価をいただいています。</p>
+                    <p>当社は先進的な製造設備と専門的な技術チームを有し、高品質・高精度な工具ソリューションをお客様に提供することに注力しています。製品は自動車製造、航空宇宙、精密機械、電子電機など、さまざまな業界で広く使用されています。</p>
+                    <p>「品質第一、飽くなき追求」が私たちの永遠のモットーです。お客様中心の考え方、技術革新への原動力、そして質の高いサービスを通じて、お客様と共に成長し、輝かしい未来を創造してまいります。</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="images/company-building.jpg" alt="天乙刀具 工場建物">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 企業ミッションとビジョン ============ -->
+    <section class="about-mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>ミッションとビジョン</h2>
+                <p>私たちは全国をリードする工具ソリューションプロバイダーを目指します</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>ミッション</h3>
+                    <p>高品質・高精度な工具製品とソリューションを提供し、お客様の生産効率向上、コスト削減、価値創造を支援します。</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>ビジョン</h3>
+                    <p>中国を代表する工具メーカーおよび技術サービスプロバイダーとなり、切削工具業界の技術革新と発展をリードします。</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>経営理念</h3>
+                    <p>誠実、卓越の追求、お客様第一、革新、共存共栄。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 沿革 ============ -->
+    <section class="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>沿革</h2>
+                <p>歩みとともに成長し続けてきました</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2009年</div>
+                        <h3>会社設立</h3>
+                        <p>大連天乙刀具有限会社を設立、超硬工具の研究開発・生産に特化。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2011年</div>
+                        <h3>品質認証取得</h3>
+                        <p>ISO9001品質システム認証を取得、品質管理体制を確立。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2016年</div>
+                        <h3>市場開拓</h3>
+                        <p>製品が国内市場に進出、多くの有名企業と協力関係を構築。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018年</div>
+                        <h3>技術アップグレード</h3>
+                        <p>国際的先端設備を導入し、自動化・スマート化を推進。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024年</div>
+                        <h3>材料アップグレード</h3>
+                        <p>新型超硬材料を採用し、工具の耐摩耗性と寿命を向上。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">現在</div>
+                        <h3>持続的発展</h3>
+                        <p>製品ラインを拡大し、研究開発を強化、全国のお客様にサービスを提供。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ 企業理念 ============ -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>企業理念</h2>
+                <p>私たちが守る原則と信念</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="value-title">品質第一</div>
+                    <p>品質を最優先し、すべての製品を厳格に検査し、最高水準を保証します。</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="value-title">革新原動</div>
+                    <p>研究開発に継続的に投資し、新技術・新製品を投入、業界をリードします。</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="value-title">お客様第一</div>
+                    <p>お客様志向で、個別化されたソリューションと優れたサービスを提供します。</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="value-title">誠実経営</div>
+                    <p>誠実を基本とし、お客様・サプライヤー・従業員との長期的な信頼関係を築きます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ お問い合わせ ============ -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>お問い合わせ</h2>
+                <p>お気軽にご連絡ください。誠心誠意対応いたします</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>所在地</h3>
+                    <div class="contact-details">
+                        <p>大連市経済技術開発区金湾南一路25-1号</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>電話番号</h3>
+                    <div class="contact-details">
+                        <p>+86 13674260538</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>メールアドレス</h3>
+                    <div class="contact-details">
+                        <p>wangyuansheng73@163.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============ フッター ============ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>天乙刀具</h3>
+                    <p>専門技術と質の高いサービスを通じて、高品質・高精度な工具ソリューションを提供することに注力しています。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>クイックリンク</h3>
+                    <ul class="footer-links">
+                        <li><a href="index-ja.html">ホーム</a></li>
+                        <li><a href="index-ja.html#services">サービス</a></li>
+                        <li><a href="products-ja.html">製品情報</a></li>
+                        <li><a href="about-ja.html">会社概要</a></li>
+                        <li><a href="index-ja.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>お問い合わせ</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 大連市経済技術開発区金湾南一路25-1号</li>
+                        <li><i class="fas fa-phone"></i> +86 13674260538</li>
+                        <li><i class="fas fa-envelope"></i> wangyuansheng73@163.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 天乙刀具有限会社 無断転載を禁じます。</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 共有JavaScriptファイル -->
+    <script src="script.js"></script>
+    
+    <!-- 会社概要ページ固有スクリプト（元と同じ） -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // チームメンバーカードのホバー効果
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+                });
+                
+                member.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'var(--shadow)';
+                });
+            });
+            
+            // 沿革アニメーション
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${index * 0.1}s`;
+                
+                observer.observe(item);
+            });
+            
+            // 企業理念カードのクリック効果
+            const valueCards = document.querySelectorAll('.value-card');
+            
+            valueCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    valueCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // ページロードインジケータ
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    document.body.style.opacity = '1';
+                    document.body.style.transition = 'opacity 0.3s ease';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
